@@ -7,6 +7,59 @@
 
 import Cocoa
 
+@objc
+class MenuItemHolder : NSObject {
+    internal init(menuItem: MenuItem) {
+        self.menuItem = menuItem
+    }
+    
+    @objc
+    func action(_ sender: NSMenuItem) {
+        guard let menuItem = self.menuItem as? ActionMenuItem else {
+            assertionFailure()
+            return
+        }
+        menuItem.action(sender)
+    }
+    
+    let menuItem: MenuItem
+    
+    func createMenuItem () -> NSMenuItem {
+        
+        let nsMenuItem = NSMenuItem(
+            title: menuItem.title,
+            action: nil,
+            keyEquivalent: menuItem.keyEquivalent
+        )
+        
+        if menuItem is ActionMenuItem {
+            nsMenuItem.action = #selector(self.action(_:))
+            nsMenuItem.target = self
+        }
+        return nsMenuItem
+    }
+}
+
+protocol ActionMenuItem {
+    func action(_ sender: NSMenuItem)
+}
+protocol MenuItem {
+    var title : String { get }
+    var keyEquivalent : String { get }
+    
+}
+
+extension NSMenu {
+    @discardableResult
+    func menuItem (_ menuItem: MenuItem) -> NSMenuItem {
+        let holder = MenuItemHolder(menuItem: menuItem)
+        let item = NSMenuItem(title: menuItem.title, action: #selector(holder.action(_:)), keyEquivalent: menuItem.keyEquivalent)
+        item.target = holder
+        self.addItem(item)
+        return item
+    }
+}
+
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     //private var window: NSWindow!
@@ -15,14 +68,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-//        window = NSWindow(
-//            contentRect: NSRect(x: 0, y: 0, width: 480, height: 270),
-//            styleMask: [.miniaturizable, .closable, .resizable, .titled],
-//            backing: .buffered, defer: false)
-//        window.center()
-//        window.title = "No Storyboard Window"
-//        window.makeKeyAndOrderFront(nil)
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         // 3
         if let button = statusItem.button {
