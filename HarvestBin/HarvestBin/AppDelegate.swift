@@ -29,8 +29,10 @@ class MenuItemHolder : NSObject {
         let nsMenuItem = NSMenuItem(
             title: menuItem.title,
             action: nil,
-            keyEquivalent: menuItem.keyEquivalent
+            keyEquivalent: menuItem.actualKeyEquivalent
         )
+        
+        nsMenuItem.image = menuItem.image
         
         if menuItem is ActionMenuItem {
             nsMenuItem.action = #selector(self.action(_:))
@@ -45,19 +47,38 @@ protocol ActionMenuItem {
 }
 protocol MenuItem {
     var title : String { get }
-    var keyEquivalent : String { get }
+    var keyEquivalent : String? { get }
+    var image : NSImage? { get }
+}
+
+extension MenuItem {
+    var image : NSImage? {
+        return nil
+    }
     
+    var actualKeyEquivalent : String {
+        self.keyEquivalent ?? ""
+    }
 }
 
 extension NSMenu {
     @discardableResult
     func menuItem (_ menuItem: MenuItem) -> NSMenuItem {
         let holder = MenuItemHolder(menuItem: menuItem)
-        let item = NSMenuItem(title: menuItem.title, action: #selector(holder.action(_:)), keyEquivalent: menuItem.keyEquivalent)
-        item.target = holder
+        let item = holder.createMenuItem()
         self.addItem(item)
         return item
     }
+}
+
+struct SecondMenuItem : MenuItem {
+    let title: String = "Second Menu Item"
+    
+    let keyEquivalent: String? = nil
+    
+    var image: NSImage? = NSImage(systemSymbolName: "2.circle", accessibilityDescription: nil)
+    
+    
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -73,6 +94,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let button = statusItem.button {
             button.image = NSImage(systemSymbolName: "1.circle", accessibilityDescription: "1")
         }
+        
+        let menu = NSMenu()
+        menu.menuItem(SecondMenuItem())
+        self.statusItem.menu = menu
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
