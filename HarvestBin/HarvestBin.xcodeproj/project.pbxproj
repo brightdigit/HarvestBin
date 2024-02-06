@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B363D0C62B72D42300C6824D /* StatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363D0C52B72D42300C6824D /* StatusItem.swift */; };
 		B39BE8372B7164CA00212067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39BE8362B7164CA00212067 /* AppDelegate.swift */; };
 		B39BE83B2B7164CB00212067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B39BE83A2B7164CB00212067 /* Assets.xcassets */; };
-		B39BE8462B71653300212067 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39BE8452B71653300212067 /* main.swift */; };
+		B39BE8462B71653300212067 /* old.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39BE8452B71653300212067 /* old.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B31D8E642B7166E600BF8F7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B363D0C52B72D42300C6824D /* StatusItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItem.swift; sourceTree = "<group>"; };
 		B39BE8332B7164CA00212067 /* HarvestBin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarvestBin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39BE8362B7164CA00212067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B39BE83A2B7164CB00212067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B39BE83F2B7164CB00212067 /* HarvestBin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HarvestBin.entitlements; sourceTree = "<group>"; };
-		B39BE8452B71653300212067 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B39BE8452B71653300212067 /* old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = old.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +57,8 @@
 				B39BE8362B7164CA00212067 /* AppDelegate.swift */,
 				B39BE83A2B7164CB00212067 /* Assets.xcassets */,
 				B39BE83F2B7164CB00212067 /* HarvestBin.entitlements */,
-				B39BE8452B71653300212067 /* main.swift */,
+				B39BE8452B71653300212067 /* old.swift */,
+				B363D0C52B72D42300C6824D /* StatusItem.swift */,
 			);
 			path = HarvestBin;
 			sourceTree = "<group>";
@@ -129,7 +132,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B39BE8462B71653300212067 /* main.swift in Sources */,
+				B363D0C62B72D42300C6824D /* StatusItem.swift in Sources */,
+				B39BE8462B71653300212067 /* old.swift in Sources */,
 				B39BE8372B7164CA00212067 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
