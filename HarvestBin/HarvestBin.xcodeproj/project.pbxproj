@@ -11,6 +11,8 @@
 		B39BE8372B7164CA00212067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39BE8362B7164CA00212067 /* AppDelegate.swift */; };
 		B39BE83B2B7164CB00212067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B39BE83A2B7164CB00212067 /* Assets.xcassets */; };
 		B39BE8462B71653300212067 /* old.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39BE8452B71653300212067 /* old.swift */; };
+		B3FFFCB12C0614F500D4810D /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FFFCB02C0614F500D4810D /* Advertiser.swift */; };
+		B3FFFCB32C06150400D4810D /* GuestServicesObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FFFCB22C06150400D4810D /* GuestServicesObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		B39BE83F2B7164CB00212067 /* HarvestBin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HarvestBin.entitlements; sourceTree = "<group>"; };
 		B39BE8452B71653300212067 /* old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = old.swift; sourceTree = "<group>"; };
 		B3FFFCAA2C06127C00D4810D /* MultipeerDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MultipeerDemo.xcodeproj; path = ../MultipeerDemo.xcodeproj; sourceTree = "<group>"; };
+		B3FFFCB02C0614F500D4810D /* Advertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertiser.swift; sourceTree = "<group>"; };
+		B3FFFCB22C06150400D4810D /* GuestServicesObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestServicesObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 				B39BE83F2B7164CB00212067 /* HarvestBin.entitlements */,
 				B39BE8452B71653300212067 /* old.swift */,
 				B363D0C52B72D42300C6824D /* StatusItem.swift */,
+				B3FFFCB02C0614F500D4810D /* Advertiser.swift */,
+				B3FFFCB22C06150400D4810D /* GuestServicesObject.swift */,
 			);
 			path = HarvestBin;
 			sourceTree = "<group>";
@@ -168,6 +174,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3FFFCB12C0614F500D4810D /* Advertiser.swift in Sources */,
+				B3FFFCB32C06150400D4810D /* GuestServicesObject.swift in Sources */,
 				B363D0C62B72D42300C6824D /* StatusItem.swift in Sources */,
 				B39BE8462B71653300212067 /* old.swift in Sources */,
 				B39BE8372B7164CA00212067 /* AppDelegate.swift in Sources */,
@@ -301,6 +309,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HarvestBin/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -326,6 +335,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HarvestBin/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
