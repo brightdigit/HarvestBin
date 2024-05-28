@@ -11,80 +11,10 @@
 		B39BE8372B7164CA00212067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39BE8362B7164CA00212067 /* AppDelegate.swift */; };
 		B39BE83B2B7164CB00212067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B39BE83A2B7164CB00212067 /* Assets.xcassets */; };
 		B39BE8462B71653300212067 /* old.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39BE8452B71653300212067 /* old.swift */; };
-		B3E9D37E2C0F58BD00427C33 /* ControllerProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3362C0F58BD00427C33 /* ControllerProperties.swift */; };
-		B3E9D37F2C0F58BD00427C33 /* SpextHasAllDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3372C0F58BD00427C33 /* SpextHasAllDependencies.swift */; };
-		B3E9D3802C0F58BD00427C33 /* SPDeveloperToolsDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3382C0F58BD00427C33 /* SPDeveloperToolsDataType.swift */; };
-		B3E9D3812C0F58BD00427C33 /* SPEthernetDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3392C0F58BD00427C33 /* SPEthernetDataType.swift */; };
-		B3E9D3822C0F58BD00427C33 /* Proxies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D33A2C0F58BD00427C33 /* Proxies.swift */; };
-		B3E9D3832C0F58BD00427C33 /* PrivateFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D33B2C0F58BD00427C33 /* PrivateFramework.swift */; };
-		B3E9D3842C0F58BD00427C33 /* DependencyResolutionFailures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D33C2C0F58BD00427C33 /* DependencyResolutionFailures.swift */; };
-		B3E9D3852C0F58BD00427C33 /* SPUSBDataTypeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D33D2C0F58BD00427C33 /* SPUSBDataTypeItem.swift */; };
-		B3E9D3862C0F58BD00427C33 /* SPNetworkVolumeDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D33E2C0F58BD00427C33 /* SPNetworkVolumeDataType.swift */; };
-		B3E9D3872C0F58BD00427C33 /* MACOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D33F2C0F58BD00427C33 /* MACOS.swift */; };
-		B3E9D3882C0F58BD00427C33 /* SPUSBDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3402C0F58BD00427C33 /* SPUSBDataType.swift */; };
-		B3E9D3892C0F58BD00427C33 /* ValidationFailures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3412C0F58BD00427C33 /* ValidationFailures.swift */; };
-		B3E9D38A2C0F58BD00427C33 /* SPNetworkLocationDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3422C0F58BD00427C33 /* SPNetworkLocationDataType.swift */; };
-		B3E9D38B2C0F58BD00427C33 /* SPPowerDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3432C0F58BD00427C33 /* SPPowerDataType.swift */; };
-		B3E9D38C2C0F58BD00427C33 /* SPRawCameraDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3442C0F58BD00427C33 /* SPRawCameraDataType.swift */; };
-		B3E9D38D2C0F58BD00427C33 /* SpextArchitecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3452C0F58BD00427C33 /* SpextArchitecture.swift */; };
-		B3E9D38E2C0F58BD00427C33 /* SpextRuntimeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3462C0F58BD00427C33 /* SpextRuntimeEnvironment.swift */; };
-		B3E9D38F2C0F58BD00427C33 /* SPFontsDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3472C0F58BD00427C33 /* SPFontsDataType.swift */; };
-		B3E9D3902C0F58BD00427C33 /* DNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3482C0F58BD00427C33 /* DNS.swift */; };
-		B3E9D3912C0F58BD00427C33 /* SPExtensionsDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3492C0F58BD00427C33 /* SPExtensionsDataType.swift */; };
-		B3E9D3922C0F58BD00427C33 /* SPiBridgeDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D34A2C0F58BD00427C33 /* SPiBridgeDataType.swift */; };
-		B3E9D3932C0F58BD00427C33 /* ObtainedFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D34B2C0F58BD00427C33 /* ObtainedFrom.swift */; };
-		B3E9D3942C0F58BD00427C33 /* SPPrintersSoftwareDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D34C2C0F58BD00427C33 /* SPPrintersSoftwareDataType.swift */; };
-		B3E9D3952C0F58BD00427C33 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D34D2C0F58BD00427C33 /* DataType.swift */; };
-		B3E9D3962C0F58BD00427C33 /* Typeface.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D34E2C0F58BD00427C33 /* Typeface.swift */; };
-		B3E9D3972C0F58BD00427C33 /* PhysicalDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D34F2C0F58BD00427C33 /* PhysicalDrive.swift */; };
-		B3E9D3982C0F58BD00427C33 /* SpprefpaneKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3502C0F58BD00427C33 /* SpprefpaneKind.swift */; };
-		B3E9D3992C0F58BD00427C33 /* DHCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3512C0F58BD00427C33 /* DHCP.swift */; };
-		B3E9D39A2C0F58BD00427C33 /* SpprefpaneSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3522C0F58BD00427C33 /* SpprefpaneSupport.swift */; };
-		B3E9D39B2C0F58BD00427C33 /* SPStorageDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3532C0F58BD00427C33 /* SPStorageDataType.swift */; };
-		B3E9D39C2C0F58BD00427C33 /* IPv4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3542C0F58BD00427C33 /* IPv4.swift */; };
-		B3E9D39D2C0F58BD00427C33 /* PackageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3552C0F58BD00427C33 /* PackageSource.swift */; };
-		B3E9D39E2C0F58BD00427C33 /* SPLogsDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3562C0F58BD00427C33 /* SPLogsDataType.swift */; };
-		B3E9D39F2C0F58BD00427C33 /* SPHardwareDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3572C0F58BD00427C33 /* SPHardwareDataType.swift */; };
-		B3E9D3A02C0F58BD00427C33 /* SpdevtoolsApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3582C0F58BD00427C33 /* SpdevtoolsApps.swift */; };
-		B3E9D3A12C0F58BD00427C33 /* ACPower.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3592C0F58BD00427C33 /* ACPower.swift */; };
-		B3E9D3A22C0F58BD00427C33 /* ArchKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D35A2C0F58BD00427C33 /* ArchKind.swift */; };
-		B3E9D3A32C0F58BD00427C33 /* SPUniversalAccessDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D35B2C0F58BD00427C33 /* SPUniversalAccessDataType.swift */; };
-		B3E9D3A42C0F58BD00427C33 /* IPv6.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D35C2C0F58BD00427C33 /* IPv6.swift */; };
-		B3E9D3A52C0F58BD00427C33 /* IOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D35D2C0F58BD00427C33 /* IOS.swift */; };
-		B3E9D3A62C0F58BD00427C33 /* SPAirPortDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D35E2C0F58BD00427C33 /* SPAirPortDataType.swift */; };
-		B3E9D3A72C0F58BD00427C33 /* SPInstallHistoryDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D35F2C0F58BD00427C33 /* SPInstallHistoryDataType.swift */; };
-		B3E9D3A82C0F58BD00427C33 /* SPFirewallDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3602C0F58BD00427C33 /* SPFirewallDataType.swift */; };
-		B3E9D3A92C0F58BD00427C33 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3612C0F58BD00427C33 /* Extension.swift */; };
-		B3E9D3AA2C0F58BD00427C33 /* AdditionalRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3622C0F58BD00427C33 /* AdditionalRoute.swift */; };
-		B3E9D3AB2C0F58BD00427C33 /* DriverKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3632C0F58BD00427C33 /* DriverKit.swift */; };
-		B3E9D3AC2C0F58BD00427C33 /* TvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3642C0F58BD00427C33 /* TvOS.swift */; };
-		B3E9D3AD2C0F58BD00427C33 /* SPMemoryDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3652C0F58BD00427C33 /* SPMemoryDataType.swift */; };
-		B3E9D3AE2C0F58BD00427C33 /* SPSmartCardsDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3662C0F58BD00427C33 /* SPSmartCardsDataType.swift */; };
-		B3E9D3AF2C0F58BD00427C33 /* TypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3672C0F58BD00427C33 /* TypeEnum.swift */; };
-		B3E9D3B02C0F58BD00427C33 /* SpdevtoolsSdks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3682C0F58BD00427C33 /* SpdevtoolsSdks.swift */; };
-		B3E9D3B12C0F58BD00427C33 /* SpnetworklocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3692C0F58BD00427C33 /* SpnetworklocationService.swift */; };
-		B3E9D3B22C0F58BD00427C33 /* SPThunderboltDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D36A2C0F58BD00427C33 /* SPThunderboltDataType.swift */; };
-		B3E9D3B32C0F58BD00427C33 /* Spext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D36B2C0F58BD00427C33 /* Spext.swift */; };
-		B3E9D3B42C0F58BD00427C33 /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D36C2C0F58BD00427C33 /* Ethernet.swift */; };
-		B3E9D3B52C0F58BD00427C33 /* WatchOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D36D2C0F58BD00427C33 /* WatchOS.swift */; };
-		B3E9D3B62C0F58BD00427C33 /* SPPrintersDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D36E2C0F58BD00427C33 /* SPPrintersDataType.swift */; };
-		B3E9D3B72C0F58BD00427C33 /* SPSoftwareDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D36F2C0F58BD00427C33 /* SPSoftwareDataType.swift */; };
-		B3E9D3B82C0F58BD00427C33 /* SPSyncServicesDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3702C0F58BD00427C33 /* SPSyncServicesDataType.swift */; };
-		B3E9D3B92C0F58BD00427C33 /* SPSyncServicesDataTypeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3712C0F58BD00427C33 /* SPSyncServicesDataTypeItem.swift */; };
-		B3E9D3BA2C0F58BD00427C33 /* SPBluetoothDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3722C0F58BD00427C33 /* SPBluetoothDataType.swift */; };
-		B3E9D3BB2C0F58BD00427C33 /* SPSDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3732C0F58BD00427C33 /* SPSDataType.swift */; };
-		B3E9D3BC2C0F58BD00427C33 /* SPInternationalDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3742C0F58BD00427C33 /* SPInternationalDataType.swift */; };
-		B3E9D3BD2C0F58BD00427C33 /* SpextValidErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3752C0F58BD00427C33 /* SpextValidErrors.swift */; };
-		B3E9D3BE2C0F58BD00427C33 /* SystemProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3762C0F58BD00427C33 /* SystemProfiler.swift */; };
-		B3E9D3BF2C0F58BD00427C33 /* IPV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3772C0F58BD00427C33 /* IPV.swift */; };
-		B3E9D3C02C0F58BD00427C33 /* SPPrefPaneDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3782C0F58BD00427C33 /* SPPrefPaneDataType.swift */; };
-		B3E9D3C12C0F58BD00427C33 /* SpairportSoftwareInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3792C0F58BD00427C33 /* SpairportSoftwareInformation.swift */; };
-		B3E9D3C22C0F58BD00427C33 /* SpextHasAllDependenciesErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D37A2C0F58BD00427C33 /* SpextHasAllDependenciesErrors.swift */; };
-		B3E9D3C32C0F58BD00427C33 /* SPNetworkDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D37B2C0F58BD00427C33 /* SPNetworkDataType.swift */; };
-		B3E9D3C42C0F58BD00427C33 /* SpextObtainedFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D37C2C0F58BD00427C33 /* SpextObtainedFrom.swift */; };
-		B3E9D3C62C0F5DE600427C33 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9D3C52C0F5DE600427C33 /* Messages.swift */; };
-		B3FFFCB12C0614F500D4810D /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FFFCB02C0614F500D4810D /* Advertiser.swift */; };
-		B3FFFCB32C06150400D4810D /* GuestServicesObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FFFCB22C06150400D4810D /* GuestServicesObject.swift */; };
+		B3F379DC2C06137A0046AE79 /* HarvesterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F379DB2C06137A0046AE79 /* HarvesterApp.swift */; };
+		B3F379DE2C06137A0046AE79 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F379DD2C06137A0046AE79 /* ContentView.swift */; };
+		B3F379E02C06137A0046AE79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F379DF2C06137A0046AE79 /* Assets.xcassets */; };
+		B3F379E32C06137A0046AE79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F379E22C06137A0046AE79 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,85 +35,25 @@
 		B39BE83A2B7164CB00212067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B39BE83F2B7164CB00212067 /* HarvestBin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HarvestBin.entitlements; sourceTree = "<group>"; };
 		B39BE8452B71653300212067 /* old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = old.swift; sourceTree = "<group>"; };
-		B3E9D3362C0F58BD00427C33 /* ControllerProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerProperties.swift; sourceTree = "<group>"; };
-		B3E9D3372C0F58BD00427C33 /* SpextHasAllDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpextHasAllDependencies.swift; sourceTree = "<group>"; };
-		B3E9D3382C0F58BD00427C33 /* SPDeveloperToolsDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDeveloperToolsDataType.swift; sourceTree = "<group>"; };
-		B3E9D3392C0F58BD00427C33 /* SPEthernetDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPEthernetDataType.swift; sourceTree = "<group>"; };
-		B3E9D33A2C0F58BD00427C33 /* Proxies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxies.swift; sourceTree = "<group>"; };
-		B3E9D33B2C0F58BD00427C33 /* PrivateFramework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateFramework.swift; sourceTree = "<group>"; };
-		B3E9D33C2C0F58BD00427C33 /* DependencyResolutionFailures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyResolutionFailures.swift; sourceTree = "<group>"; };
-		B3E9D33D2C0F58BD00427C33 /* SPUSBDataTypeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUSBDataTypeItem.swift; sourceTree = "<group>"; };
-		B3E9D33E2C0F58BD00427C33 /* SPNetworkVolumeDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNetworkVolumeDataType.swift; sourceTree = "<group>"; };
-		B3E9D33F2C0F58BD00427C33 /* MACOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACOS.swift; sourceTree = "<group>"; };
-		B3E9D3402C0F58BD00427C33 /* SPUSBDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUSBDataType.swift; sourceTree = "<group>"; };
-		B3E9D3412C0F58BD00427C33 /* ValidationFailures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationFailures.swift; sourceTree = "<group>"; };
-		B3E9D3422C0F58BD00427C33 /* SPNetworkLocationDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNetworkLocationDataType.swift; sourceTree = "<group>"; };
-		B3E9D3432C0F58BD00427C33 /* SPPowerDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPowerDataType.swift; sourceTree = "<group>"; };
-		B3E9D3442C0F58BD00427C33 /* SPRawCameraDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRawCameraDataType.swift; sourceTree = "<group>"; };
-		B3E9D3452C0F58BD00427C33 /* SpextArchitecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpextArchitecture.swift; sourceTree = "<group>"; };
-		B3E9D3462C0F58BD00427C33 /* SpextRuntimeEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpextRuntimeEnvironment.swift; sourceTree = "<group>"; };
-		B3E9D3472C0F58BD00427C33 /* SPFontsDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPFontsDataType.swift; sourceTree = "<group>"; };
-		B3E9D3482C0F58BD00427C33 /* DNS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNS.swift; sourceTree = "<group>"; };
-		B3E9D3492C0F58BD00427C33 /* SPExtensionsDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPExtensionsDataType.swift; sourceTree = "<group>"; };
-		B3E9D34A2C0F58BD00427C33 /* SPiBridgeDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPiBridgeDataType.swift; sourceTree = "<group>"; };
-		B3E9D34B2C0F58BD00427C33 /* ObtainedFrom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObtainedFrom.swift; sourceTree = "<group>"; };
-		B3E9D34C2C0F58BD00427C33 /* SPPrintersSoftwareDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPrintersSoftwareDataType.swift; sourceTree = "<group>"; };
-		B3E9D34D2C0F58BD00427C33 /* DataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
-		B3E9D34E2C0F58BD00427C33 /* Typeface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typeface.swift; sourceTree = "<group>"; };
-		B3E9D34F2C0F58BD00427C33 /* PhysicalDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalDrive.swift; sourceTree = "<group>"; };
-		B3E9D3502C0F58BD00427C33 /* SpprefpaneKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpprefpaneKind.swift; sourceTree = "<group>"; };
-		B3E9D3512C0F58BD00427C33 /* DHCP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHCP.swift; sourceTree = "<group>"; };
-		B3E9D3522C0F58BD00427C33 /* SpprefpaneSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpprefpaneSupport.swift; sourceTree = "<group>"; };
-		B3E9D3532C0F58BD00427C33 /* SPStorageDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPStorageDataType.swift; sourceTree = "<group>"; };
-		B3E9D3542C0F58BD00427C33 /* IPv4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv4.swift; sourceTree = "<group>"; };
-		B3E9D3552C0F58BD00427C33 /* PackageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageSource.swift; sourceTree = "<group>"; };
-		B3E9D3562C0F58BD00427C33 /* SPLogsDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLogsDataType.swift; sourceTree = "<group>"; };
-		B3E9D3572C0F58BD00427C33 /* SPHardwareDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPHardwareDataType.swift; sourceTree = "<group>"; };
-		B3E9D3582C0F58BD00427C33 /* SpdevtoolsApps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpdevtoolsApps.swift; sourceTree = "<group>"; };
-		B3E9D3592C0F58BD00427C33 /* ACPower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACPower.swift; sourceTree = "<group>"; };
-		B3E9D35A2C0F58BD00427C33 /* ArchKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchKind.swift; sourceTree = "<group>"; };
-		B3E9D35B2C0F58BD00427C33 /* SPUniversalAccessDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUniversalAccessDataType.swift; sourceTree = "<group>"; };
-		B3E9D35C2C0F58BD00427C33 /* IPv6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv6.swift; sourceTree = "<group>"; };
-		B3E9D35D2C0F58BD00427C33 /* IOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOS.swift; sourceTree = "<group>"; };
-		B3E9D35E2C0F58BD00427C33 /* SPAirPortDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAirPortDataType.swift; sourceTree = "<group>"; };
-		B3E9D35F2C0F58BD00427C33 /* SPInstallHistoryDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPInstallHistoryDataType.swift; sourceTree = "<group>"; };
-		B3E9D3602C0F58BD00427C33 /* SPFirewallDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPFirewallDataType.swift; sourceTree = "<group>"; };
-		B3E9D3612C0F58BD00427C33 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		B3E9D3622C0F58BD00427C33 /* AdditionalRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalRoute.swift; sourceTree = "<group>"; };
-		B3E9D3632C0F58BD00427C33 /* DriverKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverKit.swift; sourceTree = "<group>"; };
-		B3E9D3642C0F58BD00427C33 /* TvOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvOS.swift; sourceTree = "<group>"; };
-		B3E9D3652C0F58BD00427C33 /* SPMemoryDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPMemoryDataType.swift; sourceTree = "<group>"; };
-		B3E9D3662C0F58BD00427C33 /* SPSmartCardsDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSmartCardsDataType.swift; sourceTree = "<group>"; };
-		B3E9D3672C0F58BD00427C33 /* TypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeEnum.swift; sourceTree = "<group>"; };
-		B3E9D3682C0F58BD00427C33 /* SpdevtoolsSdks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpdevtoolsSdks.swift; sourceTree = "<group>"; };
-		B3E9D3692C0F58BD00427C33 /* SpnetworklocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpnetworklocationService.swift; sourceTree = "<group>"; };
-		B3E9D36A2C0F58BD00427C33 /* SPThunderboltDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPThunderboltDataType.swift; sourceTree = "<group>"; };
-		B3E9D36B2C0F58BD00427C33 /* Spext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spext.swift; sourceTree = "<group>"; };
-		B3E9D36C2C0F58BD00427C33 /* Ethernet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ethernet.swift; sourceTree = "<group>"; };
-		B3E9D36D2C0F58BD00427C33 /* WatchOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchOS.swift; sourceTree = "<group>"; };
-		B3E9D36E2C0F58BD00427C33 /* SPPrintersDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPrintersDataType.swift; sourceTree = "<group>"; };
-		B3E9D36F2C0F58BD00427C33 /* SPSoftwareDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSoftwareDataType.swift; sourceTree = "<group>"; };
-		B3E9D3702C0F58BD00427C33 /* SPSyncServicesDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSyncServicesDataType.swift; sourceTree = "<group>"; };
-		B3E9D3712C0F58BD00427C33 /* SPSyncServicesDataTypeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSyncServicesDataTypeItem.swift; sourceTree = "<group>"; };
-		B3E9D3722C0F58BD00427C33 /* SPBluetoothDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBluetoothDataType.swift; sourceTree = "<group>"; };
-		B3E9D3732C0F58BD00427C33 /* SPSDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSDataType.swift; sourceTree = "<group>"; };
-		B3E9D3742C0F58BD00427C33 /* SPInternationalDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPInternationalDataType.swift; sourceTree = "<group>"; };
-		B3E9D3752C0F58BD00427C33 /* SpextValidErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpextValidErrors.swift; sourceTree = "<group>"; };
-		B3E9D3762C0F58BD00427C33 /* SystemProfiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemProfiler.swift; sourceTree = "<group>"; };
-		B3E9D3772C0F58BD00427C33 /* IPV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPV.swift; sourceTree = "<group>"; };
-		B3E9D3782C0F58BD00427C33 /* SPPrefPaneDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPrefPaneDataType.swift; sourceTree = "<group>"; };
-		B3E9D3792C0F58BD00427C33 /* SpairportSoftwareInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpairportSoftwareInformation.swift; sourceTree = "<group>"; };
-		B3E9D37A2C0F58BD00427C33 /* SpextHasAllDependenciesErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpextHasAllDependenciesErrors.swift; sourceTree = "<group>"; };
-		B3E9D37B2C0F58BD00427C33 /* SPNetworkDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNetworkDataType.swift; sourceTree = "<group>"; };
-		B3E9D37C2C0F58BD00427C33 /* SpextObtainedFrom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpextObtainedFrom.swift; sourceTree = "<group>"; };
-		B3E9D3C52C0F5DE600427C33 /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		B3F379D92C06137A0046AE79 /* Harvester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harvester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F379DB2C06137A0046AE79 /* HarvesterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvesterApp.swift; sourceTree = "<group>"; };
+		B3F379DD2C06137A0046AE79 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B3F379DF2C06137A0046AE79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3F379E22C06137A0046AE79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B3F379E42C06137A0046AE79 /* Harvester.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Harvester.entitlements; sourceTree = "<group>"; };
+		B3F379E92C0627DA0046AE79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B3FFFCAA2C06127C00D4810D /* MultipeerDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MultipeerDemo.xcodeproj; path = ../MultipeerDemo.xcodeproj; sourceTree = "<group>"; };
-		B3FFFCB02C0614F500D4810D /* Advertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertiser.swift; sourceTree = "<group>"; };
-		B3FFFCB22C06150400D4810D /* GuestServicesObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestServicesObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B39BE8302B7164CA00212067 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F379D62C06137A0046AE79 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,6 +68,7 @@
 			children = (
 				B3FFFCAA2C06127C00D4810D /* MultipeerDemo.xcodeproj */,
 				B39BE8352B7164CA00212067 /* HarvestBin */,
+				B3F379DA2C06137A0046AE79 /* Harvester */,
 				B39BE8342B7164CA00212067 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -206,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				B39BE8332B7164CA00212067 /* HarvestBin.app */,
+				B3F379D92C06137A0046AE79 /* Harvester.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,95 +86,34 @@
 			isa = PBXGroup;
 			children = (
 				B31D8E642B7166E600BF8F7B /* Info.plist */,
-				B3E9D3352C0F58BD00427C33 /* BushelGuestProfile */,
 				B39BE8362B7164CA00212067 /* AppDelegate.swift */,
 				B39BE83A2B7164CB00212067 /* Assets.xcassets */,
 				B39BE83F2B7164CB00212067 /* HarvestBin.entitlements */,
 				B39BE8452B71653300212067 /* old.swift */,
 				B363D0C52B72D42300C6824D /* StatusItem.swift */,
-				B3E9D3C52C0F5DE600427C33 /* Messages.swift */,
-				B3FFFCB02C0614F500D4810D /* Advertiser.swift */,
-				B3FFFCB22C06150400D4810D /* GuestServicesObject.swift */,
 			);
 			path = HarvestBin;
 			sourceTree = "<group>";
 		};
-		B3E9D3352C0F58BD00427C33 /* BushelGuestProfile */ = {
+		B3F379DA2C06137A0046AE79 /* Harvester */ = {
 			isa = PBXGroup;
 			children = (
-				B3E9D3592C0F58BD00427C33 /* ACPower.swift */,
-				B3E9D3622C0F58BD00427C33 /* AdditionalRoute.swift */,
-				B3E9D35A2C0F58BD00427C33 /* ArchKind.swift */,
-				B3E9D3362C0F58BD00427C33 /* ControllerProperties.swift */,
-				B3E9D34D2C0F58BD00427C33 /* DataType.swift */,
-				B3E9D33C2C0F58BD00427C33 /* DependencyResolutionFailures.swift */,
-				B3E9D3512C0F58BD00427C33 /* DHCP.swift */,
-				B3E9D3482C0F58BD00427C33 /* DNS.swift */,
-				B3E9D3632C0F58BD00427C33 /* DriverKit.swift */,
-				B3E9D36C2C0F58BD00427C33 /* Ethernet.swift */,
-				B3E9D3612C0F58BD00427C33 /* Extension.swift */,
-				B3E9D35D2C0F58BD00427C33 /* IOS.swift */,
-				B3E9D3772C0F58BD00427C33 /* IPV.swift */,
-				B3E9D3542C0F58BD00427C33 /* IPv4.swift */,
-				B3E9D35C2C0F58BD00427C33 /* IPv6.swift */,
-				B3E9D33F2C0F58BD00427C33 /* MACOS.swift */,
-				B3E9D34B2C0F58BD00427C33 /* ObtainedFrom.swift */,
-				B3E9D3552C0F58BD00427C33 /* PackageSource.swift */,
-				B3E9D34F2C0F58BD00427C33 /* PhysicalDrive.swift */,
-				B3E9D33B2C0F58BD00427C33 /* PrivateFramework.swift */,
-				B3E9D33A2C0F58BD00427C33 /* Proxies.swift */,
-				B3E9D35E2C0F58BD00427C33 /* SPAirPortDataType.swift */,
-				B3E9D3792C0F58BD00427C33 /* SpairportSoftwareInformation.swift */,
-				B3E9D3722C0F58BD00427C33 /* SPBluetoothDataType.swift */,
-				B3E9D3382C0F58BD00427C33 /* SPDeveloperToolsDataType.swift */,
-				B3E9D3582C0F58BD00427C33 /* SpdevtoolsApps.swift */,
-				B3E9D3682C0F58BD00427C33 /* SpdevtoolsSdks.swift */,
-				B3E9D3392C0F58BD00427C33 /* SPEthernetDataType.swift */,
-				B3E9D36B2C0F58BD00427C33 /* Spext.swift */,
-				B3E9D3452C0F58BD00427C33 /* SpextArchitecture.swift */,
-				B3E9D3492C0F58BD00427C33 /* SPExtensionsDataType.swift */,
-				B3E9D3372C0F58BD00427C33 /* SpextHasAllDependencies.swift */,
-				B3E9D37A2C0F58BD00427C33 /* SpextHasAllDependenciesErrors.swift */,
-				B3E9D37C2C0F58BD00427C33 /* SpextObtainedFrom.swift */,
-				B3E9D3462C0F58BD00427C33 /* SpextRuntimeEnvironment.swift */,
-				B3E9D3752C0F58BD00427C33 /* SpextValidErrors.swift */,
-				B3E9D3602C0F58BD00427C33 /* SPFirewallDataType.swift */,
-				B3E9D3472C0F58BD00427C33 /* SPFontsDataType.swift */,
-				B3E9D3572C0F58BD00427C33 /* SPHardwareDataType.swift */,
-				B3E9D34A2C0F58BD00427C33 /* SPiBridgeDataType.swift */,
-				B3E9D35F2C0F58BD00427C33 /* SPInstallHistoryDataType.swift */,
-				B3E9D3742C0F58BD00427C33 /* SPInternationalDataType.swift */,
-				B3E9D3562C0F58BD00427C33 /* SPLogsDataType.swift */,
-				B3E9D3652C0F58BD00427C33 /* SPMemoryDataType.swift */,
-				B3E9D37B2C0F58BD00427C33 /* SPNetworkDataType.swift */,
-				B3E9D3422C0F58BD00427C33 /* SPNetworkLocationDataType.swift */,
-				B3E9D3692C0F58BD00427C33 /* SpnetworklocationService.swift */,
-				B3E9D33E2C0F58BD00427C33 /* SPNetworkVolumeDataType.swift */,
-				B3E9D3432C0F58BD00427C33 /* SPPowerDataType.swift */,
-				B3E9D3782C0F58BD00427C33 /* SPPrefPaneDataType.swift */,
-				B3E9D3502C0F58BD00427C33 /* SpprefpaneKind.swift */,
-				B3E9D3522C0F58BD00427C33 /* SpprefpaneSupport.swift */,
-				B3E9D36E2C0F58BD00427C33 /* SPPrintersDataType.swift */,
-				B3E9D34C2C0F58BD00427C33 /* SPPrintersSoftwareDataType.swift */,
-				B3E9D3442C0F58BD00427C33 /* SPRawCameraDataType.swift */,
-				B3E9D3732C0F58BD00427C33 /* SPSDataType.swift */,
-				B3E9D3662C0F58BD00427C33 /* SPSmartCardsDataType.swift */,
-				B3E9D36F2C0F58BD00427C33 /* SPSoftwareDataType.swift */,
-				B3E9D3532C0F58BD00427C33 /* SPStorageDataType.swift */,
-				B3E9D3702C0F58BD00427C33 /* SPSyncServicesDataType.swift */,
-				B3E9D3712C0F58BD00427C33 /* SPSyncServicesDataTypeItem.swift */,
-				B3E9D36A2C0F58BD00427C33 /* SPThunderboltDataType.swift */,
-				B3E9D35B2C0F58BD00427C33 /* SPUniversalAccessDataType.swift */,
-				B3E9D3402C0F58BD00427C33 /* SPUSBDataType.swift */,
-				B3E9D33D2C0F58BD00427C33 /* SPUSBDataTypeItem.swift */,
-				B3E9D3762C0F58BD00427C33 /* SystemProfiler.swift */,
-				B3E9D3642C0F58BD00427C33 /* TvOS.swift */,
-				B3E9D3672C0F58BD00427C33 /* TypeEnum.swift */,
-				B3E9D34E2C0F58BD00427C33 /* Typeface.swift */,
-				B3E9D3412C0F58BD00427C33 /* ValidationFailures.swift */,
-				B3E9D36D2C0F58BD00427C33 /* WatchOS.swift */,
+				B3F379E92C0627DA0046AE79 /* Info.plist */,
+				B3F379DB2C06137A0046AE79 /* HarvesterApp.swift */,
+				B3F379DD2C06137A0046AE79 /* ContentView.swift */,
+				B3F379DF2C06137A0046AE79 /* Assets.xcassets */,
+				B3F379E42C06137A0046AE79 /* Harvester.entitlements */,
+				B3F379E12C06137A0046AE79 /* Preview Content */,
 			);
-			path = BushelGuestProfile;
+			path = Harvester;
+			sourceTree = "<group>";
+		};
+		B3F379E12C06137A0046AE79 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B3F379E22C06137A0046AE79 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		B3FFFCAB2C06127C00D4810D /* Products */ = {
@@ -333,6 +144,23 @@
 			productReference = B39BE8332B7164CA00212067 /* HarvestBin.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B3F379D82C06137A0046AE79 /* Harvester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3F379E82C06137A0046AE79 /* Build configuration list for PBXNativeTarget "Harvester" */;
+			buildPhases = (
+				B3F379D52C06137A0046AE79 /* Sources */,
+				B3F379D62C06137A0046AE79 /* Frameworks */,
+				B3F379D72C06137A0046AE79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Harvester;
+			productName = Harvester;
+			productReference = B3F379D92C06137A0046AE79 /* Harvester.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -340,11 +168,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					B39BE8322B7164CA00212067 = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					B3F379D82C06137A0046AE79 = {
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
@@ -368,6 +199,7 @@
 			projectRoot = "";
 			targets = (
 				B39BE8322B7164CA00212067 /* HarvestBin */,
+				B3F379D82C06137A0046AE79 /* Harvester */,
 			);
 		};
 /* End PBXProject section */
@@ -391,6 +223,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3F379D72C06137A0046AE79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F379E32C06137A0046AE79 /* Preview Assets.xcassets in Resources */,
+				B3F379E02C06137A0046AE79 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -398,83 +239,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E9D3812C0F58BD00427C33 /* SPEthernetDataType.swift in Sources */,
-				B3E9D3A22C0F58BD00427C33 /* ArchKind.swift in Sources */,
-				B3E9D3A72C0F58BD00427C33 /* SPInstallHistoryDataType.swift in Sources */,
-				B3E9D3BC2C0F58BD00427C33 /* SPInternationalDataType.swift in Sources */,
-				B3E9D3862C0F58BD00427C33 /* SPNetworkVolumeDataType.swift in Sources */,
-				B3E9D38C2C0F58BD00427C33 /* SPRawCameraDataType.swift in Sources */,
-				B3FFFCB12C0614F500D4810D /* Advertiser.swift in Sources */,
-				B3E9D3C12C0F58BD00427C33 /* SpairportSoftwareInformation.swift in Sources */,
-				B3E9D39C2C0F58BD00427C33 /* IPv4.swift in Sources */,
-				B3E9D3942C0F58BD00427C33 /* SPPrintersSoftwareDataType.swift in Sources */,
-				B3E9D3BF2C0F58BD00427C33 /* IPV.swift in Sources */,
-				B3E9D3952C0F58BD00427C33 /* DataType.swift in Sources */,
-				B3E9D37F2C0F58BD00427C33 /* SpextHasAllDependencies.swift in Sources */,
-				B3E9D3C22C0F58BD00427C33 /* SpextHasAllDependenciesErrors.swift in Sources */,
-				B3E9D3B22C0F58BD00427C33 /* SPThunderboltDataType.swift in Sources */,
-				B3E9D38B2C0F58BD00427C33 /* SPPowerDataType.swift in Sources */,
-				B3E9D3892C0F58BD00427C33 /* ValidationFailures.swift in Sources */,
-				B3E9D3C62C0F5DE600427C33 /* Messages.swift in Sources */,
-				B3E9D39A2C0F58BD00427C33 /* SpprefpaneSupport.swift in Sources */,
-				B3E9D3A12C0F58BD00427C33 /* ACPower.swift in Sources */,
-				B3E9D3B52C0F58BD00427C33 /* WatchOS.swift in Sources */,
-				B3E9D3A52C0F58BD00427C33 /* IOS.swift in Sources */,
-				B3E9D3B62C0F58BD00427C33 /* SPPrintersDataType.swift in Sources */,
-				B3E9D3BD2C0F58BD00427C33 /* SpextValidErrors.swift in Sources */,
-				B3E9D3B92C0F58BD00427C33 /* SPSyncServicesDataTypeItem.swift in Sources */,
-				B3E9D3B02C0F58BD00427C33 /* SpdevtoolsSdks.swift in Sources */,
-				B3E9D3982C0F58BD00427C33 /* SpprefpaneKind.swift in Sources */,
-				B3E9D3AE2C0F58BD00427C33 /* SPSmartCardsDataType.swift in Sources */,
-				B3E9D3922C0F58BD00427C33 /* SPiBridgeDataType.swift in Sources */,
-				B3E9D3C32C0F58BD00427C33 /* SPNetworkDataType.swift in Sources */,
-				B3E9D3B12C0F58BD00427C33 /* SpnetworklocationService.swift in Sources */,
-				B3E9D3C02C0F58BD00427C33 /* SPPrefPaneDataType.swift in Sources */,
-				B3E9D3B82C0F58BD00427C33 /* SPSyncServicesDataType.swift in Sources */,
-				B3E9D3BE2C0F58BD00427C33 /* SystemProfiler.swift in Sources */,
-				B3E9D3832C0F58BD00427C33 /* PrivateFramework.swift in Sources */,
-				B3E9D3A02C0F58BD00427C33 /* SpdevtoolsApps.swift in Sources */,
-				B3FFFCB32C06150400D4810D /* GuestServicesObject.swift in Sources */,
-				B3E9D3A42C0F58BD00427C33 /* IPv6.swift in Sources */,
-				B3E9D3932C0F58BD00427C33 /* ObtainedFrom.swift in Sources */,
-				B3E9D3AF2C0F58BD00427C33 /* TypeEnum.swift in Sources */,
-				B3E9D3902C0F58BD00427C33 /* DNS.swift in Sources */,
-				B3E9D39F2C0F58BD00427C33 /* SPHardwareDataType.swift in Sources */,
-				B3E9D3A82C0F58BD00427C33 /* SPFirewallDataType.swift in Sources */,
-				B3E9D3AC2C0F58BD00427C33 /* TvOS.swift in Sources */,
-				B3E9D3992C0F58BD00427C33 /* DHCP.swift in Sources */,
-				B3E9D38F2C0F58BD00427C33 /* SPFontsDataType.swift in Sources */,
-				B3E9D38E2C0F58BD00427C33 /* SpextRuntimeEnvironment.swift in Sources */,
-				B3E9D3852C0F58BD00427C33 /* SPUSBDataTypeItem.swift in Sources */,
-				B3E9D3882C0F58BD00427C33 /* SPUSBDataType.swift in Sources */,
-				B3E9D37E2C0F58BD00427C33 /* ControllerProperties.swift in Sources */,
-				B3E9D39E2C0F58BD00427C33 /* SPLogsDataType.swift in Sources */,
 				B363D0C62B72D42300C6824D /* StatusItem.swift in Sources */,
-				B3E9D3842C0F58BD00427C33 /* DependencyResolutionFailures.swift in Sources */,
-				B3E9D3B42C0F58BD00427C33 /* Ethernet.swift in Sources */,
 				B39BE8462B71653300212067 /* old.swift in Sources */,
-				B3E9D3962C0F58BD00427C33 /* Typeface.swift in Sources */,
-				B3E9D3AB2C0F58BD00427C33 /* DriverKit.swift in Sources */,
-				B3E9D3B32C0F58BD00427C33 /* Spext.swift in Sources */,
-				B3E9D3A62C0F58BD00427C33 /* SPAirPortDataType.swift in Sources */,
-				B3E9D38D2C0F58BD00427C33 /* SpextArchitecture.swift in Sources */,
-				B3E9D3BA2C0F58BD00427C33 /* SPBluetoothDataType.swift in Sources */,
-				B3E9D3AA2C0F58BD00427C33 /* AdditionalRoute.swift in Sources */,
-				B3E9D3912C0F58BD00427C33 /* SPExtensionsDataType.swift in Sources */,
-				B3E9D3B72C0F58BD00427C33 /* SPSoftwareDataType.swift in Sources */,
-				B3E9D3972C0F58BD00427C33 /* PhysicalDrive.swift in Sources */,
-				B3E9D3C42C0F58BD00427C33 /* SpextObtainedFrom.swift in Sources */,
 				B39BE8372B7164CA00212067 /* AppDelegate.swift in Sources */,
-				B3E9D38A2C0F58BD00427C33 /* SPNetworkLocationDataType.swift in Sources */,
-				B3E9D39D2C0F58BD00427C33 /* PackageSource.swift in Sources */,
-				B3E9D3822C0F58BD00427C33 /* Proxies.swift in Sources */,
-				B3E9D3A92C0F58BD00427C33 /* Extension.swift in Sources */,
-				B3E9D3802C0F58BD00427C33 /* SPDeveloperToolsDataType.swift in Sources */,
-				B3E9D3AD2C0F58BD00427C33 /* SPMemoryDataType.swift in Sources */,
-				B3E9D3BB2C0F58BD00427C33 /* SPSDataType.swift in Sources */,
-				B3E9D3872C0F58BD00427C33 /* MACOS.swift in Sources */,
-				B3E9D39B2C0F58BD00427C33 /* SPStorageDataType.swift in Sources */,
-				B3E9D3A32C0F58BD00427C33 /* SPUniversalAccessDataType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F379D52C06137A0046AE79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F379DE2C06137A0046AE79 /* ContentView.swift in Sources */,
+				B3F379DC2C06137A0046AE79 /* HarvesterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,7 +381,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HarvestBin/Info.plist;
-				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -631,7 +406,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HarvestBin/Info.plist;
-				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -640,6 +414,77 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.HarvestBin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B3F379E52C06137A0046AE79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = Harvester/Harvester.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Harvester/Preview Content\"";
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Harvester/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "I need it for this demo";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.Harvester;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B3F379E62C06137A0046AE79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = Harvester/Harvester.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Harvester/Preview Content\"";
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Harvester/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "I need it for this demo";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.Harvester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -663,6 +508,15 @@
 			buildConfigurations = (
 				B39BE8432B7164CB00212067 /* Debug */,
 				B39BE8442B7164CB00212067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3F379E82C06137A0046AE79 /* Build configuration list for PBXNativeTarget "Harvester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3F379E52C06137A0046AE79 /* Debug */,
+				B3F379E62C06137A0046AE79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
