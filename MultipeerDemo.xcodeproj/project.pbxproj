@@ -7,35 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B363D0C62B72D42300C6824D /* StatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363D0C52B72D42300C6824D /* StatusItem.swift */; };
-		B39BE8372B7164CA00212067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39BE8362B7164CA00212067 /* AppDelegate.swift */; };
-		B39BE83B2B7164CB00212067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B39BE83A2B7164CB00212067 /* Assets.xcassets */; };
-		B39BE8462B71653300212067 /* old.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39BE8452B71653300212067 /* old.swift */; };
+		B30968FB2B8E23AF003B4BCE /* MultipeerDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30968FA2B8E23AF003B4BCE /* MultipeerDemoApp.swift */; };
+		B30968FD2B8E23AF003B4BCE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30968FC2B8E23AF003B4BCE /* ContentView.swift */; };
+		B30968FF2B8E23B0003B4BCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B30968FE2B8E23B0003B4BCE /* Assets.xcassets */; };
+		B30969022B8E23B0003B4BCE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B30969012B8E23B0003B4BCE /* Preview Assets.xcassets */; };
+		B309690A2B8E251C003B4BCE /* AdvertiserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30969092B8E251C003B4BCE /* AdvertiserManager.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B3FFFCAE2C06127C00D4810D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3FFFCAA2C06127C00D4810D /* MultipeerDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B30968F72B8E23AF003B4BCE;
-			remoteInfo = MultipeerDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		B31D8E642B7166E600BF8F7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		B363D0C52B72D42300C6824D /* StatusItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItem.swift; sourceTree = "<group>"; };
-		B39BE8332B7164CA00212067 /* HarvestBin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarvestBin.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B39BE8362B7164CA00212067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B39BE83A2B7164CB00212067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B39BE83F2B7164CB00212067 /* HarvestBin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HarvestBin.entitlements; sourceTree = "<group>"; };
-		B39BE8452B71653300212067 /* old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = old.swift; sourceTree = "<group>"; };
-		B3FFFCAA2C06127C00D4810D /* MultipeerDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MultipeerDemo.xcodeproj; path = ../MultipeerDemo.xcodeproj; sourceTree = "<group>"; };
+		B30968F72B8E23AF003B4BCE /* MultipeerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultipeerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30968FA2B8E23AF003B4BCE /* MultipeerDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerDemoApp.swift; sourceTree = "<group>"; };
+		B30968FC2B8E23AF003B4BCE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B30968FE2B8E23B0003B4BCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B30969012B8E23B0003B4BCE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B30969032B8E23B0003B4BCE /* MultipeerDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MultipeerDemo.entitlements; sourceTree = "<group>"; };
+		B30969092B8E251C003B4BCE /* AdvertiserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiserManager.swift; sourceTree = "<group>"; };
+		B309690B2B8E2C1A003B4BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B39BE8302B7164CA00212067 /* Frameworks */ = {
+		B30968F42B8E23AF003B4BCE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,80 +36,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B39BE82A2B7164CA00212067 = {
+		B30968EE2B8E23AF003B4BCE = {
 			isa = PBXGroup;
 			children = (
-				B3FFFCAA2C06127C00D4810D /* MultipeerDemo.xcodeproj */,
-				B39BE8352B7164CA00212067 /* HarvestBin */,
-				B39BE8342B7164CA00212067 /* Products */,
+				B30968F92B8E23AF003B4BCE /* MultipeerDemo */,
+				B30968F82B8E23AF003B4BCE /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		B39BE8342B7164CA00212067 /* Products */ = {
+		B30968F82B8E23AF003B4BCE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B39BE8332B7164CA00212067 /* HarvestBin.app */,
+				B30968F72B8E23AF003B4BCE /* MultipeerDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B39BE8352B7164CA00212067 /* HarvestBin */ = {
+		B30968F92B8E23AF003B4BCE /* MultipeerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				B31D8E642B7166E600BF8F7B /* Info.plist */,
-				B39BE8362B7164CA00212067 /* AppDelegate.swift */,
-				B39BE83A2B7164CB00212067 /* Assets.xcassets */,
-				B39BE83F2B7164CB00212067 /* HarvestBin.entitlements */,
-				B39BE8452B71653300212067 /* old.swift */,
-				B363D0C52B72D42300C6824D /* StatusItem.swift */,
+				B309690B2B8E2C1A003B4BCE /* Info.plist */,
+				B30968FA2B8E23AF003B4BCE /* MultipeerDemoApp.swift */,
+				B30968FC2B8E23AF003B4BCE /* ContentView.swift */,
+				B30968FE2B8E23B0003B4BCE /* Assets.xcassets */,
+				B30969032B8E23B0003B4BCE /* MultipeerDemo.entitlements */,
+				B30969002B8E23B0003B4BCE /* Preview Content */,
+				B30969092B8E251C003B4BCE /* AdvertiserManager.swift */,
 			);
-			path = HarvestBin;
+			path = MultipeerDemo;
 			sourceTree = "<group>";
 		};
-		B3FFFCAB2C06127C00D4810D /* Products */ = {
+		B30969002B8E23B0003B4BCE /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				B3FFFCAF2C06127C00D4810D /* MultipeerDemo.app */,
+				B30969012B8E23B0003B4BCE /* Preview Assets.xcassets */,
 			);
-			name = Products;
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B39BE8322B7164CA00212067 /* HarvestBin */ = {
+		B30968F62B8E23AF003B4BCE /* MultipeerDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B39BE8422B7164CB00212067 /* Build configuration list for PBXNativeTarget "HarvestBin" */;
+			buildConfigurationList = B30969062B8E23B0003B4BCE /* Build configuration list for PBXNativeTarget "MultipeerDemo" */;
 			buildPhases = (
-				B39BE82F2B7164CA00212067 /* Sources */,
-				B39BE8302B7164CA00212067 /* Frameworks */,
-				B39BE8312B7164CA00212067 /* Resources */,
+				B30968F32B8E23AF003B4BCE /* Sources */,
+				B30968F42B8E23AF003B4BCE /* Frameworks */,
+				B30968F52B8E23AF003B4BCE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = HarvestBin;
-			productName = HarvestBin;
-			productReference = B39BE8332B7164CA00212067 /* HarvestBin.app */;
+			name = MultipeerDemo;
+			productName = MultipeerDemo;
+			productReference = B30968F72B8E23AF003B4BCE /* MultipeerDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B39BE82B2B7164CA00212067 /* Project object */ = {
+		B30968EF2B8E23AF003B4BCE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					B39BE8322B7164CA00212067 = {
-						CreatedOnToolsVersion = 13.4.1;
+					B30968F62B8E23AF003B4BCE = {
+						CreatedOnToolsVersion = 13.4;
 					};
 				};
 			};
-			buildConfigurationList = B39BE82E2B7164CA00212067 /* Build configuration list for PBXProject "HarvestBin" */;
+			buildConfigurationList = B30968F22B8E23AF003B4BCE /* Build configuration list for PBXProject "MultipeerDemo" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -126,58 +117,43 @@
 				en,
 				Base,
 			);
-			mainGroup = B39BE82A2B7164CA00212067;
-			productRefGroup = B39BE8342B7164CA00212067 /* Products */;
+			mainGroup = B30968EE2B8E23AF003B4BCE;
+			productRefGroup = B30968F82B8E23AF003B4BCE /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B3FFFCAB2C06127C00D4810D /* Products */;
-					ProjectRef = B3FFFCAA2C06127C00D4810D /* MultipeerDemo.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
-				B39BE8322B7164CA00212067 /* HarvestBin */,
+				B30968F62B8E23AF003B4BCE /* MultipeerDemo */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		B3FFFCAF2C06127C00D4810D /* MultipeerDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = MultipeerDemo.app;
-			remoteRef = B3FFFCAE2C06127C00D4810D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
-		B39BE8312B7164CA00212067 /* Resources */ = {
+		B30968F52B8E23AF003B4BCE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B39BE83B2B7164CB00212067 /* Assets.xcassets in Resources */,
+				B30969022B8E23B0003B4BCE /* Preview Assets.xcassets in Resources */,
+				B30968FF2B8E23B0003B4BCE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B39BE82F2B7164CA00212067 /* Sources */ = {
+		B30968F32B8E23AF003B4BCE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B363D0C62B72D42300C6824D /* StatusItem.swift in Sources */,
-				B39BE8462B71653300212067 /* old.swift in Sources */,
-				B39BE8372B7164CA00212067 /* AppDelegate.swift in Sources */,
+				B309690A2B8E251C003B4BCE /* AdvertiserManager.swift in Sources */,
+				B30968FD2B8E23AF003B4BCE /* ContentView.swift in Sources */,
+				B30968FB2B8E23AF003B4BCE /* MultipeerDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		B39BE8402B7164CB00212067 /* Debug */ = {
+		B30969042B8E23B0003B4BCE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -237,7 +213,7 @@
 			};
 			name = Debug;
 		};
-		B39BE8412B7164CB00212067 /* Release */ = {
+		B30969052B8E23B0003B4BCE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -290,50 +266,54 @@
 			};
 			name = Release;
 		};
-		B39BE8432B7164CB00212067 /* Debug */ = {
+		B30969072B8E23B0003B4BCE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = HarvestBin/HarvestBin.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MultipeerDemo/MultipeerDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MultipeerDemo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HarvestBin/Info.plist;
+				INFOPLIST_FILE = MultipeerDemo/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "I need it for this demo";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.HarvestBin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.MultipeerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		B39BE8442B7164CB00212067 /* Release */ = {
+		B30969082B8E23B0003B4BCE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = HarvestBin/HarvestBin.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MultipeerDemo/MultipeerDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MultipeerDemo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HarvestBin/Info.plist;
+				INFOPLIST_FILE = MultipeerDemo/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "I need it for this demo";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.HarvestBin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.MultipeerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -343,25 +323,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B39BE82E2B7164CA00212067 /* Build configuration list for PBXProject "HarvestBin" */ = {
+		B30968F22B8E23AF003B4BCE /* Build configuration list for PBXProject "MultipeerDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B39BE8402B7164CB00212067 /* Debug */,
-				B39BE8412B7164CB00212067 /* Release */,
+				B30969042B8E23B0003B4BCE /* Debug */,
+				B30969052B8E23B0003B4BCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B39BE8422B7164CB00212067 /* Build configuration list for PBXNativeTarget "HarvestBin" */ = {
+		B30969062B8E23B0003B4BCE /* Build configuration list for PBXNativeTarget "MultipeerDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B39BE8432B7164CB00212067 /* Debug */,
-				B39BE8442B7164CB00212067 /* Release */,
+				B30969072B8E23B0003B4BCE /* Debug */,
+				B30969082B8E23B0003B4BCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = B39BE82B2B7164CA00212067 /* Project object */;
+	rootObject = B30968EF2B8E23AF003B4BCE /* Project object */;
 }
