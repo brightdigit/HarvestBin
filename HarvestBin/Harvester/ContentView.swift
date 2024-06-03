@@ -59,8 +59,8 @@ class BrowserListener : NSObject, MCNearbyServiceBrowserDelegate, MCSessionDeleg
     self.browser.startBrowsingForPeers()
   }
   
-  func sendData(_ data: Data, to peers: [MCPeerID]) throws {
-    try self.session.send(data, toPeers: peers, with: .reliable)
+  func sendData(_ data: Data, to peers: Set<MCPeerID>) throws {
+    try self.session.send(data, toPeers: .init(peers), with: .reliable)
   }
 }
 
@@ -124,7 +124,7 @@ class MachineListObject: BrowserReceiver {
   }
   
   func stateChangedTo(_ state: MCSessionState, for peerID: MCPeerID) {
-    //assert(peerDictionary[peerID] != nil)
+    assert(peerDictionary[peerID] != nil)
     peerDictionary[peerID] = .init(state: state)
   }
   
@@ -139,6 +139,7 @@ class MachineListObject: BrowserReceiver {
   var peerIDs = [MCPeerID]()
   var peerDictionary = [MCPeerID : PeerState]() {
     didSet {
+      dump(peerDictionary.keys)
       peerIDs = .init(peerDictionary.keys)
     }
   }
@@ -148,7 +149,7 @@ class MachineListObject: BrowserReceiver {
   
   var error : (any Error)?
   
-  func send (_ message: String, to peerIDs: [MCPeerID]) {
+  func send (_ message: String, to peerIDs: Set<MCPeerID>) {
     assert(!peerIDs.isEmpty)
     guard let data = message.data(using: .utf8) else {
       assertionFailure("Can't make data.")
@@ -178,12 +179,13 @@ extension MCPeerID : Identifiable {
 struct ContentView: View {
   @State var text = "Hello World"
   var object : MachineListObject
-  @State var selectedPeerIDs = [MCPeerID]()
+  @State var selectedPeerIDs = Set<MCPeerID>()
     var body: some View {
         VStack {
+          
           List(selection: self.$selectedPeerIDs){
-            ForEach(self.object.peerIDs) { key in
-              Text(key.displayName)
+            ForEach(self.object.peerIDs, id: \.self) { key in
+              Text(key.displayName).id(key)
             }
           }
           HStack{
