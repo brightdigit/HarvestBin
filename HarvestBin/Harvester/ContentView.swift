@@ -139,7 +139,6 @@ class MachineListObject: BrowserReceiver {
   var peerIDs = [MCPeerID]()
   var peerDictionary = [MCPeerID : PeerState]() {
     didSet {
-      dump(peerDictionary.keys)
       peerIDs = .init(peerDictionary.keys)
     }
   }
