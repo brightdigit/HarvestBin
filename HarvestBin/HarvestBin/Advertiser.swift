@@ -11,21 +11,11 @@ import MultipeerConnectivity
 
 class Advertiser : NSObject, MCNearbyServiceAdvertiserDelegate, MCSessionDelegate {
 
-    
-
-
- 
-    
-
-    
-    
-    let id : UInt64
     let session : MCSession
     let advertiser : MCNearbyServiceAdvertiser
     var receiver : GuestServiceReceiver!
     
     override init () {
-        self.id = .random(in: 0...(.max))
         let peerID = MCPeerID(displayName: "host")
         session = MCSession(peer: peerID)
         advertiser = .init(peer: peerID, discoveryInfo: nil, serviceType: "bushelgs")
@@ -48,6 +38,7 @@ class Advertiser : NSObject, MCNearbyServiceAdvertiserDelegate, MCSessionDelegat
         dump(error)
     }
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
+        
         session.connectPeer(peerID, withNearbyConnectionData: .init())
         invitationHandler(true, session)
     }
