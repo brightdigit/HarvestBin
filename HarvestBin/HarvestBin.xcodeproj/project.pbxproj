@@ -7,6 +7,77 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3291D202C0F58AA00AE3717 /* ACPower.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CD72C0F58AA00AE3717 /* ACPower.swift */; };
+		B3291D212C0F58AA00AE3717 /* AdditionalRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CD82C0F58AA00AE3717 /* AdditionalRoute.swift */; };
+		B3291D222C0F58AA00AE3717 /* ArchKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CD92C0F58AA00AE3717 /* ArchKind.swift */; };
+		B3291D232C0F58AA00AE3717 /* ControllerProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CDA2C0F58AA00AE3717 /* ControllerProperties.swift */; };
+		B3291D242C0F58AA00AE3717 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CDB2C0F58AA00AE3717 /* DataType.swift */; };
+		B3291D252C0F58AA00AE3717 /* DependencyResolutionFailures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CDC2C0F58AA00AE3717 /* DependencyResolutionFailures.swift */; };
+		B3291D262C0F58AA00AE3717 /* DHCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CDD2C0F58AA00AE3717 /* DHCP.swift */; };
+		B3291D272C0F58AA00AE3717 /* DNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CDE2C0F58AA00AE3717 /* DNS.swift */; };
+		B3291D282C0F58AA00AE3717 /* DriverKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CDF2C0F58AA00AE3717 /* DriverKit.swift */; };
+		B3291D292C0F58AA00AE3717 /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CE02C0F58AA00AE3717 /* Ethernet.swift */; };
+		B3291D2A2C0F58AA00AE3717 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CE12C0F58AA00AE3717 /* Extension.swift */; };
+		B3291D2B2C0F58AA00AE3717 /* IOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CE22C0F58AA00AE3717 /* IOS.swift */; };
+		B3291D2C2C0F58AA00AE3717 /* IPV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CE32C0F58AA00AE3717 /* IPV.swift */; };
+		B3291D2D2C0F58AA00AE3717 /* IPv4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CE42C0F58AA00AE3717 /* IPv4.swift */; };
+		B3291D2E2C0F58AA00AE3717 /* IPv6.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CE52C0F58AA00AE3717 /* IPv6.swift */; };
+		B3291D2F2C0F58AA00AE3717 /* MACOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CE62C0F58AA00AE3717 /* MACOS.swift */; };
+		B3291D302C0F58AA00AE3717 /* ObtainedFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CE72C0F58AA00AE3717 /* ObtainedFrom.swift */; };
+		B3291D312C0F58AA00AE3717 /* PackageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CE82C0F58AA00AE3717 /* PackageSource.swift */; };
+		B3291D322C0F58AA00AE3717 /* PhysicalDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CE92C0F58AA00AE3717 /* PhysicalDrive.swift */; };
+		B3291D332C0F58AA00AE3717 /* PrivateFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CEA2C0F58AA00AE3717 /* PrivateFramework.swift */; };
+		B3291D342C0F58AA00AE3717 /* Proxies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CEB2C0F58AA00AE3717 /* Proxies.swift */; };
+		B3291D352C0F58AA00AE3717 /* SPAirPortDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CEC2C0F58AA00AE3717 /* SPAirPortDataType.swift */; };
+		B3291D362C0F58AA00AE3717 /* SpairportSoftwareInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CED2C0F58AA00AE3717 /* SpairportSoftwareInformation.swift */; };
+		B3291D372C0F58AA00AE3717 /* SPBluetoothDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CEE2C0F58AA00AE3717 /* SPBluetoothDataType.swift */; };
+		B3291D382C0F58AA00AE3717 /* SPDeveloperToolsDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CEF2C0F58AA00AE3717 /* SPDeveloperToolsDataType.swift */; };
+		B3291D392C0F58AA00AE3717 /* SpdevtoolsApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CF02C0F58AA00AE3717 /* SpdevtoolsApps.swift */; };
+		B3291D3A2C0F58AA00AE3717 /* SpdevtoolsSdks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CF12C0F58AA00AE3717 /* SpdevtoolsSdks.swift */; };
+		B3291D3B2C0F58AA00AE3717 /* SPEthernetDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CF22C0F58AA00AE3717 /* SPEthernetDataType.swift */; };
+		B3291D3C2C0F58AA00AE3717 /* Spext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CF32C0F58AA00AE3717 /* Spext.swift */; };
+		B3291D3D2C0F58AA00AE3717 /* SpextArchitecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CF42C0F58AA00AE3717 /* SpextArchitecture.swift */; };
+		B3291D3E2C0F58AA00AE3717 /* SPExtensionsDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CF52C0F58AA00AE3717 /* SPExtensionsDataType.swift */; };
+		B3291D3F2C0F58AA00AE3717 /* SpextHasAllDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CF62C0F58AA00AE3717 /* SpextHasAllDependencies.swift */; };
+		B3291D402C0F58AA00AE3717 /* SpextHasAllDependenciesErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CF72C0F58AA00AE3717 /* SpextHasAllDependenciesErrors.swift */; };
+		B3291D412C0F58AA00AE3717 /* SpextObtainedFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CF82C0F58AA00AE3717 /* SpextObtainedFrom.swift */; };
+		B3291D422C0F58AA00AE3717 /* SpextRuntimeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CF92C0F58AA00AE3717 /* SpextRuntimeEnvironment.swift */; };
+		B3291D432C0F58AA00AE3717 /* SpextValidErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CFA2C0F58AA00AE3717 /* SpextValidErrors.swift */; };
+		B3291D442C0F58AA00AE3717 /* SPFirewallDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CFB2C0F58AA00AE3717 /* SPFirewallDataType.swift */; };
+		B3291D452C0F58AA00AE3717 /* SPFontsDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CFC2C0F58AA00AE3717 /* SPFontsDataType.swift */; };
+		B3291D462C0F58AA00AE3717 /* SPHardwareDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CFD2C0F58AA00AE3717 /* SPHardwareDataType.swift */; };
+		B3291D472C0F58AA00AE3717 /* SPiBridgeDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CFE2C0F58AA00AE3717 /* SPiBridgeDataType.swift */; };
+		B3291D482C0F58AA00AE3717 /* SPInstallHistoryDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291CFF2C0F58AA00AE3717 /* SPInstallHistoryDataType.swift */; };
+		B3291D492C0F58AA00AE3717 /* SPInternationalDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D002C0F58AA00AE3717 /* SPInternationalDataType.swift */; };
+		B3291D4A2C0F58AA00AE3717 /* SPLogsDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D012C0F58AA00AE3717 /* SPLogsDataType.swift */; };
+		B3291D4B2C0F58AA00AE3717 /* SPMemoryDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D022C0F58AA00AE3717 /* SPMemoryDataType.swift */; };
+		B3291D4C2C0F58AA00AE3717 /* SPNetworkDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D032C0F58AA00AE3717 /* SPNetworkDataType.swift */; };
+		B3291D4D2C0F58AA00AE3717 /* SPNetworkLocationDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D042C0F58AA00AE3717 /* SPNetworkLocationDataType.swift */; };
+		B3291D4E2C0F58AA00AE3717 /* SpnetworklocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D052C0F58AA00AE3717 /* SpnetworklocationService.swift */; };
+		B3291D4F2C0F58AA00AE3717 /* SPNetworkVolumeDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D062C0F58AA00AE3717 /* SPNetworkVolumeDataType.swift */; };
+		B3291D502C0F58AA00AE3717 /* SPPowerDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D072C0F58AA00AE3717 /* SPPowerDataType.swift */; };
+		B3291D512C0F58AA00AE3717 /* SPPrefPaneDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D082C0F58AA00AE3717 /* SPPrefPaneDataType.swift */; };
+		B3291D522C0F58AA00AE3717 /* SpprefpaneKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D092C0F58AA00AE3717 /* SpprefpaneKind.swift */; };
+		B3291D532C0F58AA00AE3717 /* SpprefpaneSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D0A2C0F58AA00AE3717 /* SpprefpaneSupport.swift */; };
+		B3291D542C0F58AA00AE3717 /* SPPrintersDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D0B2C0F58AA00AE3717 /* SPPrintersDataType.swift */; };
+		B3291D552C0F58AA00AE3717 /* SPPrintersSoftwareDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D0C2C0F58AA00AE3717 /* SPPrintersSoftwareDataType.swift */; };
+		B3291D562C0F58AA00AE3717 /* SPRawCameraDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D0D2C0F58AA00AE3717 /* SPRawCameraDataType.swift */; };
+		B3291D572C0F58AA00AE3717 /* SPSDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D0E2C0F58AA00AE3717 /* SPSDataType.swift */; };
+		B3291D582C0F58AA00AE3717 /* SPSmartCardsDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D0F2C0F58AA00AE3717 /* SPSmartCardsDataType.swift */; };
+		B3291D592C0F58AA00AE3717 /* SPSoftwareDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D102C0F58AA00AE3717 /* SPSoftwareDataType.swift */; };
+		B3291D5A2C0F58AA00AE3717 /* SPStorageDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D112C0F58AA00AE3717 /* SPStorageDataType.swift */; };
+		B3291D5B2C0F58AA00AE3717 /* SPSyncServicesDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D122C0F58AA00AE3717 /* SPSyncServicesDataType.swift */; };
+		B3291D5C2C0F58AA00AE3717 /* SPSyncServicesDataTypeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D132C0F58AA00AE3717 /* SPSyncServicesDataTypeItem.swift */; };
+		B3291D5D2C0F58AA00AE3717 /* SPThunderboltDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D142C0F58AA00AE3717 /* SPThunderboltDataType.swift */; };
+		B3291D5E2C0F58AA00AE3717 /* SPUniversalAccessDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D152C0F58AA00AE3717 /* SPUniversalAccessDataType.swift */; };
+		B3291D5F2C0F58AA00AE3717 /* SPUSBDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D162C0F58AA00AE3717 /* SPUSBDataType.swift */; };
+		B3291D602C0F58AA00AE3717 /* SPUSBDataTypeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D172C0F58AA00AE3717 /* SPUSBDataTypeItem.swift */; };
+		B3291D612C0F58AA00AE3717 /* SystemProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D182C0F58AA00AE3717 /* SystemProfiler.swift */; };
+		B3291D622C0F58AA00AE3717 /* TvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D192C0F58AA00AE3717 /* TvOS.swift */; };
+		B3291D632C0F58AA00AE3717 /* TypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D1A2C0F58AA00AE3717 /* TypeEnum.swift */; };
+		B3291D642C0F58AA00AE3717 /* Typeface.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D1B2C0F58AA00AE3717 /* Typeface.swift */; };
+		B3291D652C0F58AA00AE3717 /* ValidationFailures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D1C2C0F58AA00AE3717 /* ValidationFailures.swift */; };
+		B3291D662C0F58AA00AE3717 /* WatchOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3291D1D2C0F58AA00AE3717 /* WatchOS.swift */; };
 		B363D0C62B72D42300C6824D /* StatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B363D0C52B72D42300C6824D /* StatusItem.swift */; };
 		B39BE8372B7164CA00212067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39BE8362B7164CA00212067 /* AppDelegate.swift */; };
 		B39BE83B2B7164CB00212067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B39BE83A2B7164CB00212067 /* Assets.xcassets */; };
@@ -29,6 +100,77 @@
 
 /* Begin PBXFileReference section */
 		B31D8E642B7166E600BF8F7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B3291CD72C0F58AA00AE3717 /* ACPower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACPower.swift; sourceTree = "<group>"; };
+		B3291CD82C0F58AA00AE3717 /* AdditionalRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalRoute.swift; sourceTree = "<group>"; };
+		B3291CD92C0F58AA00AE3717 /* ArchKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchKind.swift; sourceTree = "<group>"; };
+		B3291CDA2C0F58AA00AE3717 /* ControllerProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerProperties.swift; sourceTree = "<group>"; };
+		B3291CDB2C0F58AA00AE3717 /* DataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
+		B3291CDC2C0F58AA00AE3717 /* DependencyResolutionFailures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyResolutionFailures.swift; sourceTree = "<group>"; };
+		B3291CDD2C0F58AA00AE3717 /* DHCP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHCP.swift; sourceTree = "<group>"; };
+		B3291CDE2C0F58AA00AE3717 /* DNS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNS.swift; sourceTree = "<group>"; };
+		B3291CDF2C0F58AA00AE3717 /* DriverKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverKit.swift; sourceTree = "<group>"; };
+		B3291CE02C0F58AA00AE3717 /* Ethernet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ethernet.swift; sourceTree = "<group>"; };
+		B3291CE12C0F58AA00AE3717 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		B3291CE22C0F58AA00AE3717 /* IOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOS.swift; sourceTree = "<group>"; };
+		B3291CE32C0F58AA00AE3717 /* IPV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPV.swift; sourceTree = "<group>"; };
+		B3291CE42C0F58AA00AE3717 /* IPv4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv4.swift; sourceTree = "<group>"; };
+		B3291CE52C0F58AA00AE3717 /* IPv6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv6.swift; sourceTree = "<group>"; };
+		B3291CE62C0F58AA00AE3717 /* MACOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACOS.swift; sourceTree = "<group>"; };
+		B3291CE72C0F58AA00AE3717 /* ObtainedFrom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObtainedFrom.swift; sourceTree = "<group>"; };
+		B3291CE82C0F58AA00AE3717 /* PackageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageSource.swift; sourceTree = "<group>"; };
+		B3291CE92C0F58AA00AE3717 /* PhysicalDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalDrive.swift; sourceTree = "<group>"; };
+		B3291CEA2C0F58AA00AE3717 /* PrivateFramework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateFramework.swift; sourceTree = "<group>"; };
+		B3291CEB2C0F58AA00AE3717 /* Proxies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxies.swift; sourceTree = "<group>"; };
+		B3291CEC2C0F58AA00AE3717 /* SPAirPortDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAirPortDataType.swift; sourceTree = "<group>"; };
+		B3291CED2C0F58AA00AE3717 /* SpairportSoftwareInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpairportSoftwareInformation.swift; sourceTree = "<group>"; };
+		B3291CEE2C0F58AA00AE3717 /* SPBluetoothDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBluetoothDataType.swift; sourceTree = "<group>"; };
+		B3291CEF2C0F58AA00AE3717 /* SPDeveloperToolsDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDeveloperToolsDataType.swift; sourceTree = "<group>"; };
+		B3291CF02C0F58AA00AE3717 /* SpdevtoolsApps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpdevtoolsApps.swift; sourceTree = "<group>"; };
+		B3291CF12C0F58AA00AE3717 /* SpdevtoolsSdks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpdevtoolsSdks.swift; sourceTree = "<group>"; };
+		B3291CF22C0F58AA00AE3717 /* SPEthernetDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPEthernetDataType.swift; sourceTree = "<group>"; };
+		B3291CF32C0F58AA00AE3717 /* Spext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spext.swift; sourceTree = "<group>"; };
+		B3291CF42C0F58AA00AE3717 /* SpextArchitecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpextArchitecture.swift; sourceTree = "<group>"; };
+		B3291CF52C0F58AA00AE3717 /* SPExtensionsDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPExtensionsDataType.swift; sourceTree = "<group>"; };
+		B3291CF62C0F58AA00AE3717 /* SpextHasAllDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpextHasAllDependencies.swift; sourceTree = "<group>"; };
+		B3291CF72C0F58AA00AE3717 /* SpextHasAllDependenciesErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpextHasAllDependenciesErrors.swift; sourceTree = "<group>"; };
+		B3291CF82C0F58AA00AE3717 /* SpextObtainedFrom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpextObtainedFrom.swift; sourceTree = "<group>"; };
+		B3291CF92C0F58AA00AE3717 /* SpextRuntimeEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpextRuntimeEnvironment.swift; sourceTree = "<group>"; };
+		B3291CFA2C0F58AA00AE3717 /* SpextValidErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpextValidErrors.swift; sourceTree = "<group>"; };
+		B3291CFB2C0F58AA00AE3717 /* SPFirewallDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPFirewallDataType.swift; sourceTree = "<group>"; };
+		B3291CFC2C0F58AA00AE3717 /* SPFontsDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPFontsDataType.swift; sourceTree = "<group>"; };
+		B3291CFD2C0F58AA00AE3717 /* SPHardwareDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPHardwareDataType.swift; sourceTree = "<group>"; };
+		B3291CFE2C0F58AA00AE3717 /* SPiBridgeDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPiBridgeDataType.swift; sourceTree = "<group>"; };
+		B3291CFF2C0F58AA00AE3717 /* SPInstallHistoryDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPInstallHistoryDataType.swift; sourceTree = "<group>"; };
+		B3291D002C0F58AA00AE3717 /* SPInternationalDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPInternationalDataType.swift; sourceTree = "<group>"; };
+		B3291D012C0F58AA00AE3717 /* SPLogsDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLogsDataType.swift; sourceTree = "<group>"; };
+		B3291D022C0F58AA00AE3717 /* SPMemoryDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPMemoryDataType.swift; sourceTree = "<group>"; };
+		B3291D032C0F58AA00AE3717 /* SPNetworkDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNetworkDataType.swift; sourceTree = "<group>"; };
+		B3291D042C0F58AA00AE3717 /* SPNetworkLocationDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNetworkLocationDataType.swift; sourceTree = "<group>"; };
+		B3291D052C0F58AA00AE3717 /* SpnetworklocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpnetworklocationService.swift; sourceTree = "<group>"; };
+		B3291D062C0F58AA00AE3717 /* SPNetworkVolumeDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNetworkVolumeDataType.swift; sourceTree = "<group>"; };
+		B3291D072C0F58AA00AE3717 /* SPPowerDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPowerDataType.swift; sourceTree = "<group>"; };
+		B3291D082C0F58AA00AE3717 /* SPPrefPaneDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPrefPaneDataType.swift; sourceTree = "<group>"; };
+		B3291D092C0F58AA00AE3717 /* SpprefpaneKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpprefpaneKind.swift; sourceTree = "<group>"; };
+		B3291D0A2C0F58AA00AE3717 /* SpprefpaneSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpprefpaneSupport.swift; sourceTree = "<group>"; };
+		B3291D0B2C0F58AA00AE3717 /* SPPrintersDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPrintersDataType.swift; sourceTree = "<group>"; };
+		B3291D0C2C0F58AA00AE3717 /* SPPrintersSoftwareDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPrintersSoftwareDataType.swift; sourceTree = "<group>"; };
+		B3291D0D2C0F58AA00AE3717 /* SPRawCameraDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRawCameraDataType.swift; sourceTree = "<group>"; };
+		B3291D0E2C0F58AA00AE3717 /* SPSDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSDataType.swift; sourceTree = "<group>"; };
+		B3291D0F2C0F58AA00AE3717 /* SPSmartCardsDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSmartCardsDataType.swift; sourceTree = "<group>"; };
+		B3291D102C0F58AA00AE3717 /* SPSoftwareDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSoftwareDataType.swift; sourceTree = "<group>"; };
+		B3291D112C0F58AA00AE3717 /* SPStorageDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPStorageDataType.swift; sourceTree = "<group>"; };
+		B3291D122C0F58AA00AE3717 /* SPSyncServicesDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSyncServicesDataType.swift; sourceTree = "<group>"; };
+		B3291D132C0F58AA00AE3717 /* SPSyncServicesDataTypeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSyncServicesDataTypeItem.swift; sourceTree = "<group>"; };
+		B3291D142C0F58AA00AE3717 /* SPThunderboltDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPThunderboltDataType.swift; sourceTree = "<group>"; };
+		B3291D152C0F58AA00AE3717 /* SPUniversalAccessDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUniversalAccessDataType.swift; sourceTree = "<group>"; };
+		B3291D162C0F58AA00AE3717 /* SPUSBDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUSBDataType.swift; sourceTree = "<group>"; };
+		B3291D172C0F58AA00AE3717 /* SPUSBDataTypeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUSBDataTypeItem.swift; sourceTree = "<group>"; };
+		B3291D182C0F58AA00AE3717 /* SystemProfiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemProfiler.swift; sourceTree = "<group>"; };
+		B3291D192C0F58AA00AE3717 /* TvOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvOS.swift; sourceTree = "<group>"; };
+		B3291D1A2C0F58AA00AE3717 /* TypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeEnum.swift; sourceTree = "<group>"; };
+		B3291D1B2C0F58AA00AE3717 /* Typeface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typeface.swift; sourceTree = "<group>"; };
+		B3291D1C2C0F58AA00AE3717 /* ValidationFailures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationFailures.swift; sourceTree = "<group>"; };
+		B3291D1D2C0F58AA00AE3717 /* WatchOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchOS.swift; sourceTree = "<group>"; };
 		B363D0C52B72D42300C6824D /* StatusItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItem.swift; sourceTree = "<group>"; };
 		B39BE8332B7164CA00212067 /* HarvestBin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarvestBin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39BE8362B7164CA00212067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +205,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3291D1E2C0F58AA00AE3717 /* BushelGuestProfile */ = {
+			isa = PBXGroup;
+			children = (
+				B3291CD72C0F58AA00AE3717 /* ACPower.swift */,
+				B3291CD82C0F58AA00AE3717 /* AdditionalRoute.swift */,
+				B3291CD92C0F58AA00AE3717 /* ArchKind.swift */,
+				B3291CDA2C0F58AA00AE3717 /* ControllerProperties.swift */,
+				B3291CDB2C0F58AA00AE3717 /* DataType.swift */,
+				B3291CDC2C0F58AA00AE3717 /* DependencyResolutionFailures.swift */,
+				B3291CDD2C0F58AA00AE3717 /* DHCP.swift */,
+				B3291CDE2C0F58AA00AE3717 /* DNS.swift */,
+				B3291CDF2C0F58AA00AE3717 /* DriverKit.swift */,
+				B3291CE02C0F58AA00AE3717 /* Ethernet.swift */,
+				B3291CE12C0F58AA00AE3717 /* Extension.swift */,
+				B3291CE22C0F58AA00AE3717 /* IOS.swift */,
+				B3291CE32C0F58AA00AE3717 /* IPV.swift */,
+				B3291CE42C0F58AA00AE3717 /* IPv4.swift */,
+				B3291CE52C0F58AA00AE3717 /* IPv6.swift */,
+				B3291CE62C0F58AA00AE3717 /* MACOS.swift */,
+				B3291CE72C0F58AA00AE3717 /* ObtainedFrom.swift */,
+				B3291CE82C0F58AA00AE3717 /* PackageSource.swift */,
+				B3291CE92C0F58AA00AE3717 /* PhysicalDrive.swift */,
+				B3291CEA2C0F58AA00AE3717 /* PrivateFramework.swift */,
+				B3291CEB2C0F58AA00AE3717 /* Proxies.swift */,
+				B3291CEC2C0F58AA00AE3717 /* SPAirPortDataType.swift */,
+				B3291CED2C0F58AA00AE3717 /* SpairportSoftwareInformation.swift */,
+				B3291CEE2C0F58AA00AE3717 /* SPBluetoothDataType.swift */,
+				B3291CEF2C0F58AA00AE3717 /* SPDeveloperToolsDataType.swift */,
+				B3291CF02C0F58AA00AE3717 /* SpdevtoolsApps.swift */,
+				B3291CF12C0F58AA00AE3717 /* SpdevtoolsSdks.swift */,
+				B3291CF22C0F58AA00AE3717 /* SPEthernetDataType.swift */,
+				B3291CF32C0F58AA00AE3717 /* Spext.swift */,
+				B3291CF42C0F58AA00AE3717 /* SpextArchitecture.swift */,
+				B3291CF52C0F58AA00AE3717 /* SPExtensionsDataType.swift */,
+				B3291CF62C0F58AA00AE3717 /* SpextHasAllDependencies.swift */,
+				B3291CF72C0F58AA00AE3717 /* SpextHasAllDependenciesErrors.swift */,
+				B3291CF82C0F58AA00AE3717 /* SpextObtainedFrom.swift */,
+				B3291CF92C0F58AA00AE3717 /* SpextRuntimeEnvironment.swift */,
+				B3291CFA2C0F58AA00AE3717 /* SpextValidErrors.swift */,
+				B3291CFB2C0F58AA00AE3717 /* SPFirewallDataType.swift */,
+				B3291CFC2C0F58AA00AE3717 /* SPFontsDataType.swift */,
+				B3291CFD2C0F58AA00AE3717 /* SPHardwareDataType.swift */,
+				B3291CFE2C0F58AA00AE3717 /* SPiBridgeDataType.swift */,
+				B3291CFF2C0F58AA00AE3717 /* SPInstallHistoryDataType.swift */,
+				B3291D002C0F58AA00AE3717 /* SPInternationalDataType.swift */,
+				B3291D012C0F58AA00AE3717 /* SPLogsDataType.swift */,
+				B3291D022C0F58AA00AE3717 /* SPMemoryDataType.swift */,
+				B3291D032C0F58AA00AE3717 /* SPNetworkDataType.swift */,
+				B3291D042C0F58AA00AE3717 /* SPNetworkLocationDataType.swift */,
+				B3291D052C0F58AA00AE3717 /* SpnetworklocationService.swift */,
+				B3291D062C0F58AA00AE3717 /* SPNetworkVolumeDataType.swift */,
+				B3291D072C0F58AA00AE3717 /* SPPowerDataType.swift */,
+				B3291D082C0F58AA00AE3717 /* SPPrefPaneDataType.swift */,
+				B3291D092C0F58AA00AE3717 /* SpprefpaneKind.swift */,
+				B3291D0A2C0F58AA00AE3717 /* SpprefpaneSupport.swift */,
+				B3291D0B2C0F58AA00AE3717 /* SPPrintersDataType.swift */,
+				B3291D0C2C0F58AA00AE3717 /* SPPrintersSoftwareDataType.swift */,
+				B3291D0D2C0F58AA00AE3717 /* SPRawCameraDataType.swift */,
+				B3291D0E2C0F58AA00AE3717 /* SPSDataType.swift */,
+				B3291D0F2C0F58AA00AE3717 /* SPSmartCardsDataType.swift */,
+				B3291D102C0F58AA00AE3717 /* SPSoftwareDataType.swift */,
+				B3291D112C0F58AA00AE3717 /* SPStorageDataType.swift */,
+				B3291D122C0F58AA00AE3717 /* SPSyncServicesDataType.swift */,
+				B3291D132C0F58AA00AE3717 /* SPSyncServicesDataTypeItem.swift */,
+				B3291D142C0F58AA00AE3717 /* SPThunderboltDataType.swift */,
+				B3291D152C0F58AA00AE3717 /* SPUniversalAccessDataType.swift */,
+				B3291D162C0F58AA00AE3717 /* SPUSBDataType.swift */,
+				B3291D172C0F58AA00AE3717 /* SPUSBDataTypeItem.swift */,
+				B3291D182C0F58AA00AE3717 /* SystemProfiler.swift */,
+				B3291D192C0F58AA00AE3717 /* TvOS.swift */,
+				B3291D1A2C0F58AA00AE3717 /* TypeEnum.swift */,
+				B3291D1B2C0F58AA00AE3717 /* Typeface.swift */,
+				B3291D1C2C0F58AA00AE3717 /* ValidationFailures.swift */,
+				B3291D1D2C0F58AA00AE3717 /* WatchOS.swift */,
+			);
+			path = BushelGuestProfile;
+			sourceTree = "<group>";
+		};
 		B39BE82A2B7164CA00212067 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +318,7 @@
 		B3F379DA2C06137A0046AE79 /* Harvester */ = {
 			isa = PBXGroup;
 			children = (
+				B3291D1E2C0F58AA00AE3717 /* BushelGuestProfile */,
 				B3F379E92C0627DA0046AE79 /* Info.plist */,
 				B3F379DB2C06137A0046AE79 /* HarvesterApp.swift */,
 				B3F379DD2C06137A0046AE79 /* ContentView.swift */,
@@ -249,8 +470,79 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3291D5D2C0F58AA00AE3717 /* SPThunderboltDataType.swift in Sources */,
+				B3291D422C0F58AA00AE3717 /* SpextRuntimeEnvironment.swift in Sources */,
+				B3291D412C0F58AA00AE3717 /* SpextObtainedFrom.swift in Sources */,
+				B3291D482C0F58AA00AE3717 /* SPInstallHistoryDataType.swift in Sources */,
+				B3291D342C0F58AA00AE3717 /* Proxies.swift in Sources */,
+				B3291D3A2C0F58AA00AE3717 /* SpdevtoolsSdks.swift in Sources */,
+				B3291D262C0F58AA00AE3717 /* DHCP.swift in Sources */,
+				B3291D5A2C0F58AA00AE3717 /* SPStorageDataType.swift in Sources */,
+				B3291D3B2C0F58AA00AE3717 /* SPEthernetDataType.swift in Sources */,
+				B3291D582C0F58AA00AE3717 /* SPSmartCardsDataType.swift in Sources */,
+				B3291D4F2C0F58AA00AE3717 /* SPNetworkVolumeDataType.swift in Sources */,
+				B3291D622C0F58AA00AE3717 /* TvOS.swift in Sources */,
+				B3291D212C0F58AA00AE3717 /* AdditionalRoute.swift in Sources */,
+				B3291D472C0F58AA00AE3717 /* SPiBridgeDataType.swift in Sources */,
+				B3291D562C0F58AA00AE3717 /* SPRawCameraDataType.swift in Sources */,
+				B3291D282C0F58AA00AE3717 /* DriverKit.swift in Sources */,
+				B3291D382C0F58AA00AE3717 /* SPDeveloperToolsDataType.swift in Sources */,
+				B3291D312C0F58AA00AE3717 /* PackageSource.swift in Sources */,
+				B3291D4E2C0F58AA00AE3717 /* SpnetworklocationService.swift in Sources */,
+				B3291D2B2C0F58AA00AE3717 /* IOS.swift in Sources */,
+				B3291D3D2C0F58AA00AE3717 /* SpextArchitecture.swift in Sources */,
 				B3F379DE2C06137A0046AE79 /* ContentView.swift in Sources */,
+				B3291D292C0F58AA00AE3717 /* Ethernet.swift in Sources */,
+				B3291D232C0F58AA00AE3717 /* ControllerProperties.swift in Sources */,
+				B3291D4A2C0F58AA00AE3717 /* SPLogsDataType.swift in Sources */,
+				B3291D372C0F58AA00AE3717 /* SPBluetoothDataType.swift in Sources */,
+				B3291D572C0F58AA00AE3717 /* SPSDataType.swift in Sources */,
 				B3F379DC2C06137A0046AE79 /* HarvesterApp.swift in Sources */,
+				B3291D632C0F58AA00AE3717 /* TypeEnum.swift in Sources */,
+				B3291D4C2C0F58AA00AE3717 /* SPNetworkDataType.swift in Sources */,
+				B3291D452C0F58AA00AE3717 /* SPFontsDataType.swift in Sources */,
+				B3291D2D2C0F58AA00AE3717 /* IPv4.swift in Sources */,
+				B3291D602C0F58AA00AE3717 /* SPUSBDataTypeItem.swift in Sources */,
+				B3291D612C0F58AA00AE3717 /* SystemProfiler.swift in Sources */,
+				B3291D222C0F58AA00AE3717 /* ArchKind.swift in Sources */,
+				B3291D4B2C0F58AA00AE3717 /* SPMemoryDataType.swift in Sources */,
+				B3291D362C0F58AA00AE3717 /* SpairportSoftwareInformation.swift in Sources */,
+				B3291D5E2C0F58AA00AE3717 /* SPUniversalAccessDataType.swift in Sources */,
+				B3291D492C0F58AA00AE3717 /* SPInternationalDataType.swift in Sources */,
+				B3291D202C0F58AA00AE3717 /* ACPower.swift in Sources */,
+				B3291D302C0F58AA00AE3717 /* ObtainedFrom.swift in Sources */,
+				B3291D512C0F58AA00AE3717 /* SPPrefPaneDataType.swift in Sources */,
+				B3291D552C0F58AA00AE3717 /* SPPrintersSoftwareDataType.swift in Sources */,
+				B3291D5B2C0F58AA00AE3717 /* SPSyncServicesDataType.swift in Sources */,
+				B3291D2F2C0F58AA00AE3717 /* MACOS.swift in Sources */,
+				B3291D3E2C0F58AA00AE3717 /* SPExtensionsDataType.swift in Sources */,
+				B3291D442C0F58AA00AE3717 /* SPFirewallDataType.swift in Sources */,
+				B3291D392C0F58AA00AE3717 /* SpdevtoolsApps.swift in Sources */,
+				B3291D332C0F58AA00AE3717 /* PrivateFramework.swift in Sources */,
+				B3291D3C2C0F58AA00AE3717 /* Spext.swift in Sources */,
+				B3291D522C0F58AA00AE3717 /* SpprefpaneKind.swift in Sources */,
+				B3291D2A2C0F58AA00AE3717 /* Extension.swift in Sources */,
+				B3291D242C0F58AA00AE3717 /* DataType.swift in Sources */,
+				B3291D592C0F58AA00AE3717 /* SPSoftwareDataType.swift in Sources */,
+				B3291D402C0F58AA00AE3717 /* SpextHasAllDependenciesErrors.swift in Sources */,
+				B3291D662C0F58AA00AE3717 /* WatchOS.swift in Sources */,
+				B3291D432C0F58AA00AE3717 /* SpextValidErrors.swift in Sources */,
+				B3291D352C0F58AA00AE3717 /* SPAirPortDataType.swift in Sources */,
+				B3291D3F2C0F58AA00AE3717 /* SpextHasAllDependencies.swift in Sources */,
+				B3291D502C0F58AA00AE3717 /* SPPowerDataType.swift in Sources */,
+				B3291D542C0F58AA00AE3717 /* SPPrintersDataType.swift in Sources */,
+				B3291D252C0F58AA00AE3717 /* DependencyResolutionFailures.swift in Sources */,
+				B3291D5F2C0F58AA00AE3717 /* SPUSBDataType.swift in Sources */,
+				B3291D2C2C0F58AA00AE3717 /* IPV.swift in Sources */,
+				B3291D272C0F58AA00AE3717 /* DNS.swift in Sources */,
+				B3291D5C2C0F58AA00AE3717 /* SPSyncServicesDataTypeItem.swift in Sources */,
+				B3291D652C0F58AA00AE3717 /* ValidationFailures.swift in Sources */,
+				B3291D4D2C0F58AA00AE3717 /* SPNetworkLocationDataType.swift in Sources */,
+				B3291D322C0F58AA00AE3717 /* PhysicalDrive.swift in Sources */,
+				B3291D462C0F58AA00AE3717 /* SPHardwareDataType.swift in Sources */,
+				B3291D642C0F58AA00AE3717 /* Typeface.swift in Sources */,
+				B3291D2E2C0F58AA00AE3717 /* IPv6.swift in Sources */,
+				B3291D532C0F58AA00AE3717 /* SpprefpaneSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

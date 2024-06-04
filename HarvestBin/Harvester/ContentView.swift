@@ -8,6 +8,27 @@
 import SwiftUI
 import MultipeerConnectivity
 
+struct BaseMessage : Codable {
+  let id : UUID
+}
+
+protocol Message : Codable {
+  var id : UUID { get }
+    associatedtype Reply : Message
+}
+
+struct SystemProfileReply : Message {
+  let id : UUID
+  let profile : SystemProfiler
+  
+  typealias Reply = SystemProfileMessage
+}
+
+struct SystemProfileMessage : Message {
+  typealias Reply = SystemProfileReply
+  
+  let id : UUID
+}
 class BrowserListener : NSObject, MCNearbyServiceBrowserDelegate, MCSessionDelegate {
   internal init(displayName : String) {
     let id = MCPeerID(displayName: displayName)
@@ -31,7 +52,7 @@ class BrowserListener : NSObject, MCNearbyServiceBrowserDelegate, MCSessionDeleg
   }
   
   func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-    
+    self.receiver.receivedFrom(peerID, data: data)
   }
   
   func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
@@ -69,6 +90,7 @@ protocol BrowserReceiver {
   func foundPeer(_ peerID: MCPeerID)
   func lostPeer(_ peerID: MCPeerID)
   func stateChangedTo(_ state: MCSessionState, for peerID: MCPeerID)
+  func receivedFrom(_ peerID: MCPeerID, data: Data)
 }
 
 enum PeerState {
@@ -115,7 +137,11 @@ struct Peer : Identifiable, Hashable {
 
 @Observable
 class MachineListObject: BrowserReceiver {
+  let jsonEncoder : JSONEncoder = .init()
+  let jsonDecoder : JSONDecoder = .init()
   var selectedPeerIDs = Set<MCPeerID>()
+  @ObservationIgnored
+  var messageQueue = [UUID : CheckedContinuation<Data, Error>]()
   func foundPeer(_ peerID: MCPeerID) {
     print("Found", peerID.displayName)
     assert(peerDictionary[peerID] == nil)
@@ -164,21 +190,76 @@ class MachineListObject: BrowserReceiver {
   
   var error : (any Error)?
   
-  func send (_ message: String) {
-    assert(!peerIDs.isEmpty)
-    guard let data = message.data(using: .utf8) else {
-      assertionFailure("Can't make data.")
-      return
-    }
-    
+  func receivedFrom(_ peerID: MCPeerID, data: Data) {
     do {
-      try listener.sendData(data, to: selectedPeerIDs)
+      let baseMessage = try self.jsonDecoder.decode(BaseMessage.self, from: data)
+      let id = baseMessage.id
+      guard let continuation = self.messageQueue.removeValue(forKey: id) else {
+        assertionFailure()
+        return
+      }
+      continuation.resume(returning: data)
     } catch {
-      assert(error == nil)
-      dump(error)
+      
+        assert(error == nil)
+        dump(error)
       return
     }
   }
+  
+  func systemProfile () async -> SystemProfiler? {
+        assert(!peerIDs.isEmpty)
+    let id = UUID()
+    let data : Data
+    do {
+       data = try self.jsonEncoder.encode(SystemProfileMessage(id: id))
+    } catch {
+      
+        assert(error == nil)
+        dump(error)
+      return nil
+    }
+    let task = Task {
+      try await withCheckedThrowingContinuation {  continuation in
+        self.messageQueue[id] = continuation
+      }
+    }
+    
+        do {
+          try listener.sendData(data, to: selectedPeerIDs)
+        } catch {
+          assert(error == nil)
+          dump(error)
+          return nil
+        }
+    do {
+      let result = try await task.value
+      let reply = try jsonDecoder.decode(SystemProfileMessage.Reply.self, from: result)
+      return reply.profile
+    } catch {
+      assert(error == nil)
+      dump(error)
+      return nil
+      
+    }
+    
+  }
+  
+//  func send (_ message: String) {
+//    assert(!peerIDs.isEmpty)
+//    guard let data = message.data(using: .utf8) else {
+//      assertionFailure("Can't make data.")
+//      return
+//    }
+//    
+//    do {
+//      try listener.sendData(data, to: selectedPeerIDs)
+//    } catch {
+//      assert(error == nil)
+//      dump(error)
+//      return
+//    }
+//  }
   
   func start () {
     self.listener.startWith(receiver: self)
@@ -212,18 +293,29 @@ struct ContentView: View {
   @State var object : MachineListObject
     var body: some View {
         VStack {
-          
           List(selection: self.$object.selectedPeerIDs){
             ForEach(self.object.peerIDs, id: \.self) { key in
               Text(key.displayName).tag(key, selectable: self.object.stateOf(key) == .connected)
             }
           }
+//          HStack{
+//            TextField("Message", text: self.$text)
+//            Button {
+//              self.object.send(self.text)
+//            } label: {
+//              Text("Send")
+//            }.disabled(self.object.selectedPeerIDs.isEmpty)
+//          }
+          
           HStack{
-            TextField("Message", text: self.$text)
             Button {
-              self.object.send(self.text)
+              Task {
+                if let systemProfile = await self.object.systemProfile() {
+                  dump(systemProfile)
+                }
+              }
             } label: {
-              Text("Send")
+              Text("Pull System Profile")
             }.disabled(self.object.selectedPeerIDs.isEmpty)
           }
         }
