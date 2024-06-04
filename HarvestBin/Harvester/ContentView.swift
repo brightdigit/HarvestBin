@@ -11,7 +11,8 @@ import MultipeerConnectivity
 class BrowserListener : NSObject, MCNearbyServiceBrowserDelegate, MCSessionDelegate {
   internal init(displayName : String) {
     let id = MCPeerID(displayName: displayName)
-    session = MCSession(peer: id)
+    
+    session = MCSession(peer: id, securityIdentity: nil, encryptionPreference: .none)
     browser = .init(peer: id, serviceType: "bushelgs")
     
     super.init()
@@ -114,17 +115,25 @@ struct Peer : Identifiable, Hashable {
 
 @Observable
 class MachineListObject: BrowserReceiver {
+  var selectedPeerIDs = Set<MCPeerID>()
   func foundPeer(_ peerID: MCPeerID) {
+    print("Found", peerID.displayName)
     assert(peerDictionary[peerID] == nil)
     peerDictionary[peerID] = .found
   }
   
   func lostPeer(_ peerID: MCPeerID) {
-    assert(peerDictionary.removeValue(forKey: peerID) != nil)
+    let previousState = peerDictionary.removeValue(forKey: peerID)
+    print("lost", peerID.displayName, previousState as Any)
+    assert(previousState != nil)
   }
   
   func stateChangedTo(_ state: MCSessionState, for peerID: MCPeerID) {
-    assert(peerDictionary[peerID] != nil)
+    print(state.rawValue, peerID.displayName)
+    guard peerDictionary[peerID] != nil || state != .notConnected else {
+      return
+    }
+    assert(peerDictionary[peerID] != nil || state == .notConnected)
     peerDictionary[peerID] = .init(state: state)
   }
   
@@ -136,10 +145,17 @@ class MachineListObject: BrowserReceiver {
     self.listener = listener
   }
   
-  var peerIDs = [MCPeerID]()
+  var peerIDs = [MCPeerID]() {
+    didSet {
+      selectedPeerIDs.formIntersection(peerIDs)
+      
+      print("Updating Selection: \(peerIDs.count)")
+    }
+  }
   var peerDictionary = [MCPeerID : PeerState]() {
     didSet {
       peerIDs = .init(peerDictionary.keys)
+      print("Updating IDs: \(peerIDs.count)")
     }
   }
   
@@ -148,7 +164,7 @@ class MachineListObject: BrowserReceiver {
   
   var error : (any Error)?
   
-  func send (_ message: String, to peerIDs: Set<MCPeerID>) {
+  func send (_ message: String) {
     assert(!peerIDs.isEmpty)
     guard let data = message.data(using: .utf8) else {
       assertionFailure("Can't make data.")
@@ -156,7 +172,7 @@ class MachineListObject: BrowserReceiver {
     }
     
     do {
-      try listener.sendData(data, to: peerIDs)
+      try listener.sendData(data, to: selectedPeerIDs)
     } catch {
       assert(error == nil)
       dump(error)
@@ -167,6 +183,10 @@ class MachineListObject: BrowserReceiver {
   func start () {
     self.listener.startWith(receiver: self)
   }
+  
+  func stateOf(_ key: MCPeerID) -> PeerState? {
+    return self.peerDictionary[key]
+  }
 }
 
 extension MCPeerID : Identifiable {
@@ -175,25 +195,36 @@ extension MCPeerID : Identifiable {
   }
 }
 
+extension View {
+    func tag<V>(_ tag: V, selectable: Bool) -> some View where V : Hashable {
+        Group {
+            if selectable == true {
+                self.tag(tag)
+            } else {
+                self.foregroundColor(.secondary)
+            }
+        }
+    }
+}
+
 struct ContentView: View {
   @State var text = "Hello World"
-  var object : MachineListObject
-  @State var selectedPeerIDs = Set<MCPeerID>()
+  @State var object : MachineListObject
     var body: some View {
         VStack {
           
-          List(selection: self.$selectedPeerIDs){
+          List(selection: self.$object.selectedPeerIDs){
             ForEach(self.object.peerIDs, id: \.self) { key in
-              Text(key.displayName).id(key)
+              Text(key.displayName).tag(key, selectable: self.object.stateOf(key) == .connected)
             }
           }
           HStack{
             TextField("Message", text: self.$text)
             Button {
-              self.object.send(self.text, to: selectedPeerIDs)
+              self.object.send(self.text)
             } label: {
               Text("Send")
-            }.disabled(self.selectedPeerIDs.isEmpty)
+            }.disabled(self.object.selectedPeerIDs.isEmpty)
           }
         }
         .padding()
