@@ -54,12 +54,14 @@ class Advertiser : NSObject, MCNearbyServiceAdvertiserDelegate, MCSessionDelegat
         
     }
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        self.receiver.didReceiveData(data)
+        self.receiver.didReceiveData(data, from: peerID)
     }
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         self.receiver.connectionUpdateTo(.init(state: state, peerID: peerID))
     }
-    
+    func sendData(_ data: Data, to peers: [MCPeerID]) throws {
+        try self.session.send(data, toPeers: peers, with: .reliable)
+    }
 }
 
 extension ConnectionStatus {

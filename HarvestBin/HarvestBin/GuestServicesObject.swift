@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import MultipeerConnectivity
 
 protocol GuestServiceReceiver {
-    func didReceiveData(_ data: Data)
+    func didReceiveData(_ data: Data, from peerID: MCPeerID)
     func connectionUpdateTo(_ status: ConnectionStatus)
     
 }
@@ -20,14 +21,28 @@ enum ConnectionStatus {
     case unknown(String)
 }
 class GuestServicesObject : ObservableObject, GuestServiceReceiver {
-    func didReceiveData(_ data: Data) {
-        guard let newMessage = String(bytes: data, encoding: .utf8) else {
-            assertionFailure("Unable to interpert data")
+    let encoder = JSONEncoder()
+    let decoder = JSONDecoder()
+    func didReceiveData(_ data: Data, from peerID: MCPeerID) {
+        do {
+            let baseMessage = try decoder.decode(BaseMessage.self, from: data)
+            let hardware : [SPHardwareDataType] = try SystemProfiler.data()
+            let network : [SPNetworkDataType] = try SystemProfiler.data()
+            let systemProfile = SystemProfiler(spHardwareDataType: hardware, spNetworkDataType: network)
+            let reply = SystemProfileReply(id: baseMessage.id, profile: systemProfile)
+            let replyData = try encoder.encode(reply)
+            try self.advertiser.sendData(replyData, to: [peerID])
+        } catch {
+            assertionFailure(error.localizedDescription)
             return
         }
-        DispatchQueue.main.async {
-            self.lastMessage = newMessage
-        }
+//        guard let newMessage = String(bytes: data, encoding: .utf8) else {
+//            assertionFailure("Unable to interpert data")
+//            return
+//        }
+//        DispatchQueue.main.async {
+//            self.lastMessage = newMessage
+//        }
     }
     
     func connectionUpdateTo(_ status: ConnectionStatus) {
@@ -37,7 +52,7 @@ class GuestServicesObject : ObservableObject, GuestServiceReceiver {
         }
     }
     
-    @Published var lastMessage = ""
+    //@Published var lastMessage = ""
     @Published var connectedState = ConnectionStatus.initialized
     let advertiser : Advertiser
     

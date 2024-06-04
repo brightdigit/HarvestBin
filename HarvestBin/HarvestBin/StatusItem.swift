@@ -62,7 +62,6 @@ struct StatusBarItemView: View {
                 Text("Status Bar Item")
                 Text("Status Bar Item")
                 Text("Status Bar Item")
-                Text(object.lastMessage)
                 Spacer()
             }
             Spacer()
