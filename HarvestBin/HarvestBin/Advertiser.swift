@@ -17,7 +17,7 @@ class Advertiser : NSObject, MCNearbyServiceAdvertiserDelegate, MCSessionDelegat
     
     override init () {
         let peerID = MCPeerID(displayName: "host")
-        session = MCSession(peer: peerID)
+        session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
         advertiser = .init(peer: peerID, discoveryInfo: nil, serviceType: "bushelgs")
         
         super.init()

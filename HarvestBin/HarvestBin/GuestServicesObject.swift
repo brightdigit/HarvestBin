@@ -21,7 +21,6 @@ enum ConnectionStatus {
 }
 class GuestServicesObject : ObservableObject, GuestServiceReceiver {
     func didReceiveData(_ data: Data) {
-        dump(data)
         guard let newMessage = String(bytes: data, encoding: .utf8) else {
             assertionFailure("Unable to interpert data")
             return
@@ -34,7 +33,6 @@ class GuestServicesObject : ObservableObject, GuestServiceReceiver {
     func connectionUpdateTo(_ status: ConnectionStatus) {
         
         DispatchQueue.main.async {
-            dump(status)
             self.connectedState = status
         }
     }
