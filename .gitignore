@@ -1,3 +1,32 @@
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Xcode ###
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
@@ -68,6 +97,7 @@ Carthage/Build/
 
 # Accio dependency management
 Dependencies/
+/*.gcno
 .accio/
 
 # fastlane
@@ -81,10 +111,14 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+### Projects ###
+*.xcodeproj
+*.xcworkspace
 
-# Code Injection
-#
 # After new code Injection tools there's a generated folder /iOSInjectionProject
-# https://github.com/johnno1962/injectionforxcode
+graph.dot
+Derived/
 
 iOSInjectionProject/
+### Tuist managed dependencies ###
+Tuist/.build
