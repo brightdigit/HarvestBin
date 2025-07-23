@@ -2,12 +2,16 @@ import ProjectDescription
 
 let project = Project(
     name: "HarvestBin",
+    organizationName: "BrightDigit",
+    packages: [
+      .local(path: "./Packages/HarvestBinKit")
+    ],
     targets: [
         .target(
             name: "HarvestBin",
             destinations: .macOS,
             product: .app,
-            bundleId: "io.tuist.HarvestBin",
+            bundleId: "com.brightdigit.HarvestBin",
             infoPlist: .default,
             sources: ["HarvestBin/Sources/**"],
             resources: ["HarvestBin/Resources/**"],
@@ -17,11 +21,14 @@ let project = Project(
             name: "HarvestBinTests",
             destinations: .macOS,
             product: .unitTests,
-            bundleId: "io.tuist.HarvestBinTests",
+            bundleId: "com.brightdigit.HarvestBinTests",
             infoPlist: .default,
             sources: ["HarvestBin/Tests/**"],
             resources: [],
             dependencies: [.target(name: "HarvestBin")]
         ),
+    ],
+    additionalFiles: [
+      .folderReference(path: "_archive")
     ]
 )
