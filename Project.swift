@@ -1,5 +1,6 @@
 import ProjectDescription
 
+#warning("specify team and minimum OS 13")
 let project = Project(
     name: "HarvestBin",
     organizationName: "BrightDigit",
