@@ -4,7 +4,7 @@ let project = Project(
     name: "HarvestBin",
     organizationName: "BrightDigit",
     packages: [
-      .local(path: "./Packages/HarvestBinKit")
+      .package(path: "./Packages/HarvestBinKit")
     ],
     targets: [
         .target(
