@@ -1,9 +1,13 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
+import SwiftUI
+
 @main
-struct HarvestBinKit {
-    static func main() {
-        print("Hello, world!")
+struct HarvestBinApp : App {
+    var body: some Scene {
+        WindowGroup {
+            Text("Hello World")
+        }
     }
 }
