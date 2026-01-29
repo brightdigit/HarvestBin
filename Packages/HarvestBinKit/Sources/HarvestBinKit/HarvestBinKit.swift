@@ -1,9 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-@main
-struct HarvestBinKit {
-    static func main() {
-        print("Hello, world!")
-    }
+// HarvestBinKit library - placeholder for guest-side Harvest functionality
+public struct HarvestBinKit {
+    public init() {}
 }
