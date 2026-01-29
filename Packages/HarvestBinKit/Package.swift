@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "HarvestBinKit",
-    platforms: [    
+    platforms: [
       SupportedPlatform.macOS(.v12),
     SupportedPlatform.iOS(.v15),
     SupportedPlatform.watchOS(.v8),
@@ -30,6 +30,7 @@ let package = Package(
             dependencies: [
               .product(name: "BushelFoundation", package: "BushelKit"),
               .product(name: "BushelGuestProfile", package: "BushelKit"),
+              .product(name: "BushelHarvestCore", package: "BushelKit"),
             ]
         )
     ]

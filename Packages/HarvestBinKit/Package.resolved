@@ -1,5 +1,5 @@
 {
-  "originHash" : "8392add1cafbbba42aef30693f3c92578ab34487fadbb6c0a104d1d10fd6c23b",
+  "originHash" : "f8b9bfb69237aa891e854024e74e1d6ee1144f8cea3844b7bf2a94009031ed92",
   "pins" : [
     {
       "identity" : "felinepine",
@@ -42,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/brightdigit/RadiantKit.git",
       "state" : {
-        "revision" : "c18df553d5eec6230fc8bf91b260a0a30dca5f79",
-        "version" : "1.0.0-beta.4"
+        "revision" : "a65d6721b6b396f0503a3876ddab3f2399b21d4e",
+        "version" : "1.0.0-beta.5"
       }
     },
     {
@@ -78,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-log.git",
       "state" : {
-        "revision" : "ce592ae52f982c847a4efc0dd881cc9eb32d29f2",
-        "version" : "1.6.4"
+        "revision" : "2778fd4e5a12a8aaa30a3ee8285f4ce54c5f3181",
+        "version" : "1.9.1"
       }
     },
     {
