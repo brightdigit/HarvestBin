@@ -8,34 +8,36 @@
 import Foundation
 
 /// Remote access coordinator for managing SSH and other remote access services
-/// 
+///
 /// Coordinates SSH service management, status monitoring, and configuration validation.
 public protocol RemoteAccessManager: Sendable {
   /// Enables remote access services
   /// - Parameter type: The type of remote access to enable
   /// - Throws: RemoteAccessError on failure
   func enable(_ type: RemoteAccessType) async throws
-  
+
   /// Disables remote access services
   /// - Parameter type: The type of remote access to disable
   /// - Throws: RemoteAccessError on failure
   func disable(_ type: RemoteAccessType) async throws
-  
+
   /// Gets the status of a remote access service
   /// - Parameter type: The type of remote access to check
   /// - Returns: The current status
   /// - Throws: RemoteAccessError on failure
   func status(for type: RemoteAccessType) async throws -> RemoteAccessStatus
-  
+
   /// Validates the configuration of remote access services
   /// - Returns: True if configuration is valid
   func validateConfiguration() async -> Bool
-  
+
   /// Monitors remote access services and reports status changes
   /// - Parameter callback: Called when status changes
   /// - Returns: A cancellation token
-  func monitorServices(_ callback: @escaping @Sendable (RemoteAccessType, RemoteAccessStatus) -> Void) -> UUID
-  
+  func monitorServices(
+    _ callback: @escaping @Sendable (RemoteAccessType, RemoteAccessStatus) -> Void
+  ) -> UUID
+
   /// Stops monitoring a service
   /// - Parameter monitorID: The monitoring session ID
   func stopMonitoring(_ monitorID: UUID)
@@ -47,7 +49,7 @@ public final class DefaultRemoteAccessManager: RemoteAccessManager {
   private let logger: Logger
   private var monitors: [UUID: RemoteAccessMonitor] = [:]
   private let monitorsLock = NSLock()
-  
+
   /// Initializes the remote access manager
   /// - Parameters:
   ///   - sshManager: SSH service management
@@ -59,29 +61,29 @@ public final class DefaultRemoteAccessManager: RemoteAccessManager {
     self.sshManager = sshManager
     self.logger = logger
   }
-  
+
   public func enable(_ type: RemoteAccessType) async throws {
     logger.info("Enabling remote access: \(type)")
-    
+
     switch type {
     case .ssh:
       try await sshManager.enable()
     }
-    
+
     logger.info("Remote access enabled: \(type)")
   }
-  
+
   public func disable(_ type: RemoteAccessType) async throws {
     logger.info("Disabling remote access: \(type)")
-    
+
     switch type {
     case .ssh:
       try await sshManager.disable()
     }
-    
+
     logger.info("Remote access disabled: \(type)")
   }
-  
+
   public func status(for type: RemoteAccessType) async throws -> RemoteAccessStatus {
     switch type {
     case .ssh:
@@ -89,13 +91,15 @@ public final class DefaultRemoteAccessManager: RemoteAccessManager {
       return .ssh(sshStatus)
     }
   }
-  
+
   public func validateConfiguration() async -> Bool {
     // Validate SSH configuration
     return await sshManager.validateConfiguration()
   }
-  
-  public func monitorServices(_ callback: @escaping @Sendable (RemoteAccessType, RemoteAccessStatus) -> Void) -> UUID {
+
+  public func monitorServices(
+    _ callback: @escaping @Sendable (RemoteAccessType, RemoteAccessStatus) -> Void
+  ) -> UUID {
     let monitorID = UUID()
     let monitor = RemoteAccessMonitor(
       id: monitorID,
@@ -103,22 +107,22 @@ public final class DefaultRemoteAccessManager: RemoteAccessManager {
       sshManager: sshManager,
       logger: logger
     )
-    
+
     monitorsLock.lock()
     monitors[monitorID] = monitor
     monitorsLock.unlock()
-    
+
     monitor.start()
-    
+
     logger.info("Started monitoring remote access services: \(monitorID)")
     return monitorID
   }
-  
+
   public func stopMonitoring(_ monitorID: UUID) {
     monitorsLock.lock()
     let monitor = monitors.removeValue(forKey: monitorID)
     monitorsLock.unlock()
-    
+
     monitor?.stop()
     logger.info("Stopped monitoring remote access services: \(monitorID)")
   }
@@ -141,7 +145,7 @@ public struct SSHServiceStatus: Sendable {
   public let port: Int?
   public let connectionCount: Int
   public let lastStartTime: Date?
-  
+
   public init(
     isEnabled: Bool,
     isRunning: Bool,
@@ -170,7 +174,7 @@ public final class DefaultSSHManager: SSHManager {
   private let systemSetupExecutor: SystemSetupExecutor
   private let sshDaemonManager: SSHDaemonManager
   private let logger: Logger
-  
+
   public init(
     systemSetupExecutor: SystemSetupExecutor = DefaultSystemSetupExecutor(),
     sshDaemonManager: SSHDaemonManager = DefaultSSHDaemonManager(),
@@ -180,42 +184,42 @@ public final class DefaultSSHManager: SSHManager {
     self.sshDaemonManager = sshDaemonManager
     self.logger = logger
   }
-  
+
   public func enable() async throws {
     logger.info("Enabling SSH service")
-    
+
     // Enable SSH via systemsetup
     try await systemSetupExecutor.enableSSH()
-    
+
     // Verify SSH daemon is running
     let isRunning = await sshDaemonManager.isRunning()
     if !isRunning {
       logger.info("SSH daemon not running, attempting to start")
       try await sshDaemonManager.start()
     }
-    
+
     logger.info("SSH service enabled successfully")
   }
-  
+
   public func disable() async throws {
     logger.info("Disabling SSH service")
-    
+
     // Stop SSH daemon first
     if await sshDaemonManager.isRunning() {
       try await sshDaemonManager.stop()
     }
-    
+
     // Disable SSH via systemsetup
     try await systemSetupExecutor.disableSSH()
-    
+
     logger.info("SSH service disabled successfully")
   }
-  
+
   public func status() async throws -> SSHServiceStatus {
     let isEnabled = try await systemSetupExecutor.getSSHStatus()
     let isRunning = await sshDaemonManager.isRunning()
     let connectionDetails = await sshDaemonManager.connectionDetails()
-    
+
     return SSHServiceStatus(
       isEnabled: isEnabled,
       isRunning: isRunning,
@@ -224,7 +228,7 @@ public final class DefaultSSHManager: SSHManager {
       lastStartTime: connectionDetails.startTime
     )
   }
-  
+
   public func validateConfiguration() async -> Bool {
     // Basic SSH configuration validation
     do {
@@ -249,7 +253,7 @@ public protocol SSHDaemonManager: Sendable {
 public struct SSHConnectionDetails: Sendable {
   public let connectionCount: Int
   public let startTime: Date?
-  
+
   public init(connectionCount: Int = 0, startTime: Date? = nil) {
     self.connectionCount = connectionCount
     self.startTime = startTime
@@ -260,7 +264,7 @@ public struct SSHConnectionDetails: Sendable {
 public final class DefaultSSHDaemonManager: SSHDaemonManager {
   private let processRunner: ProcessRunner
   private let logger: Logger
-  
+
   public init(
     processRunner: ProcessRunner = DefaultProcessRunner(),
     logger: Logger = ConsoleLogger()
@@ -268,7 +272,7 @@ public final class DefaultSSHDaemonManager: SSHDaemonManager {
     self.processRunner = processRunner
     self.logger = logger
   }
-  
+
   public func isRunning() async -> Bool {
     do {
       let result = try await processRunner.run(
@@ -276,7 +280,7 @@ public final class DefaultSSHDaemonManager: SSHDaemonManager {
         arguments: ["print", "system/com.openssh.sshd"],
         requiresElevation: false
       )
-      
+
       // If the service is loaded and running, launchctl print will succeed
       return result.exitCode == 0 && result.stdout.contains("state = running")
     } catch {
@@ -284,39 +288,39 @@ public final class DefaultSSHDaemonManager: SSHDaemonManager {
       return false
     }
   }
-  
+
   public func start() async throws {
     logger.info("Starting SSH daemon")
-    
+
     let result = try await processRunner.run(
       executable: "/bin/launchctl",
       arguments: ["load", "/System/Library/LaunchDaemons/com.openssh.sshd.plist"],
       requiresElevation: true
     )
-    
+
     guard result.exitCode == 0 else {
       throw RemoteAccessError.serviceStartFailed("sshd", output: result.stderr)
     }
-    
+
     logger.info("SSH daemon started successfully")
   }
-  
+
   public func stop() async throws {
     logger.info("Stopping SSH daemon")
-    
+
     let result = try await processRunner.run(
       executable: "/bin/launchctl",
       arguments: ["unload", "/System/Library/LaunchDaemons/com.openssh.sshd.plist"],
       requiresElevation: true
     )
-    
+
     guard result.exitCode == 0 else {
       throw RemoteAccessError.serviceStopFailed("sshd", output: result.stderr)
     }
-    
+
     logger.info("SSH daemon stopped successfully")
   }
-  
+
   public func connectionDetails() async -> SSHConnectionDetails {
     // For Phase 1, return basic details
     // In a full implementation, this would parse actual SSH connection info
@@ -332,7 +336,7 @@ private final class RemoteAccessMonitor {
   private let logger: Logger
   private var isRunning: Bool = false
   private var monitorTask: Task<Void, Never>?
-  
+
   init(
     id: UUID,
     callback: @escaping @Sendable (RemoteAccessType, RemoteAccessStatus) -> Void,
@@ -344,7 +348,7 @@ private final class RemoteAccessMonitor {
     self.sshManager = sshManager
     self.logger = logger
   }
-  
+
   func start() {
     isRunning = true
     monitorTask = Task {
@@ -355,13 +359,13 @@ private final class RemoteAccessMonitor {
         } catch {
           logger.error("Failed to get SSH status during monitoring: \(error)")
         }
-        
+
         // Check every 30 seconds
         try? await Task.sleep(nanoseconds: 30_000_000_000)
       }
     }
   }
-  
+
   func stop() {
     isRunning = false
     monitorTask?.cancel()
@@ -375,7 +379,7 @@ public enum RemoteAccessError: Error, Sendable {
   case serviceStopFailed(String, output: String)
   case configurationInvalid(String)
   case statusCheckFailed(String, underlying: Error)
-  
+
   public var localizedDescription: String {
     switch self {
     case .unsupportedType(let type):

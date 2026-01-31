@@ -4,10 +4,10 @@
 import SwiftUI
 
 @main
-struct HarvestBinApp : App {
-    var body: some Scene {
-        WindowGroup {
-            Text("Hello World")
-        }
+struct HarvestBinApp: App {
+  var body: some Scene {
+    WindowGroup {
+      Text("Hello World")
     }
+  }
 }

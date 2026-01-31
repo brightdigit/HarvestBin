@@ -30,7 +30,7 @@ let package = Package(
             dependencies: [
               .product(name: "BushelFoundation", package: "BushelKit"),
               .product(name: "BushelGuestProfile", package: "BushelKit"),
-              .product(name: "BushelHarvestCore", package: "BushelKit"),
+              .product(name: "BushelHarvestCore", package: "BushelKit")
             ]
         )
     ]

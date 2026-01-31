@@ -9,7 +9,7 @@ import Foundation
 import Network
 
 /// Service advertising for VM discovery using Network framework
-/// 
+///
 /// Advertises the HarvestBin service to allow host machines to discover this guest VM.
 public protocol DiscoveryService: Sendable {
   /// Starts advertising the HarvestBin service
@@ -18,15 +18,15 @@ public protocol DiscoveryService: Sendable {
   ///   - capabilities: List of capabilities this VM supports
   /// - Throws: DiscoveryError on failure
   func startAdvertising(vmIdentifier: String, capabilities: [String]) async throws
-  
+
   /// Stops advertising the service
   func stopAdvertising() async
-  
+
   /// Updates the advertised capabilities
   /// - Parameter capabilities: New list of capabilities
   /// - Throws: DiscoveryError on failure
   func updateCapabilities(_ capabilities: [String]) async throws
-  
+
   /// Gets the current advertising status
   /// - Returns: True if currently advertising
   var isAdvertising: Bool { get async }
@@ -36,27 +36,27 @@ public protocol DiscoveryService: Sendable {
 public final class NetworkDiscoveryService: DiscoveryService {
   private let serviceName: String = "_bushel-guest._tcp"
   private let servicePort: UInt16 = 8080
-  
+
   private var listener: NWListener?
   private var vmIdentifier: String?
   private var currentCapabilities: [String] = []
   private let logger: Logger
-  
+
   /// Initializes the discovery service
   /// - Parameter logger: Logging service
   public init(logger: Logger = ConsoleLogger()) {
     self.logger = logger
   }
-  
+
   public func startAdvertising(vmIdentifier: String, capabilities: [String]) async throws {
     logger.info("Starting service advertising for VM: \(vmIdentifier)")
-    
+
     // Stop any existing advertising
     await stopAdvertising()
-    
+
     self.vmIdentifier = vmIdentifier
     self.currentCapabilities = capabilities
-    
+
     do {
       try await startListener()
       logger.info("Successfully started advertising service \(serviceName)")
@@ -65,71 +65,71 @@ public final class NetworkDiscoveryService: DiscoveryService {
       throw DiscoveryError.advertisingFailed(underlying: error)
     }
   }
-  
+
   public func stopAdvertising() async {
     guard let listener = listener else { return }
-    
+
     logger.info("Stopping service advertising")
-    
+
     listener.cancel()
     self.listener = nil
-    
+
     logger.info("Service advertising stopped")
   }
-  
+
   public func updateCapabilities(_ capabilities: [String]) async throws {
     guard isAdvertising else {
       throw DiscoveryError.notAdvertising
     }
-    
+
     logger.info("Updating advertised capabilities: \(capabilities)")
-    
+
     self.currentCapabilities = capabilities
-    
+
     // Restart advertising with new capabilities
     if let vmIdentifier = vmIdentifier {
       try await startAdvertising(vmIdentifier: vmIdentifier, capabilities: capabilities)
     }
   }
-  
+
   public var isAdvertising: Bool {
     get async {
       return listener?.state == .ready
     }
   }
-  
+
   // MARK: - Private Methods
-  
+
   private func startListener() async throws {
     let parameters = NWParameters.tcp
-    
+
     // Enable peer-to-peer for local network discovery
     parameters.includePeerToPeer = true
-    
+
     // Create the listener
     listener = try NWListener(using: parameters, on: NWEndpoint.Port(rawValue: servicePort)!)
-    
+
     guard let listener = listener else {
       throw DiscoveryError.listenerCreationFailed
     }
-    
+
     // Configure service advertising
     listener.service = try createServiceConfiguration()
-    
+
     // Set up state update handler
     listener.stateUpdateHandler = { [weak self] state in
       self?.handleStateUpdate(state)
     }
-    
+
     // Set up new connection handler
     listener.newConnectionHandler = { [weak self] connection in
       self?.handleNewConnection(connection)
     }
-    
+
     // Start the listener
     return try await withCheckedThrowingContinuation { continuation in
       var hasResumed = false
-      
+
       listener.stateUpdateHandler = { state in
         switch state {
         case .ready:
@@ -151,51 +151,51 @@ public final class NetworkDiscoveryService: DiscoveryService {
           break
         }
       }
-      
+
       listener.start(queue: .main)
     }
   }
-  
+
   private func createServiceConfiguration() throws -> NWListener.Service {
     guard let vmIdentifier = vmIdentifier else {
       throw DiscoveryError.missingVMIdentifier
     }
-    
+
     // Create TXT record with VM metadata
     let txtRecord = createTXTRecord()
-    
+
     return NWListener.Service(
       name: vmIdentifier,
       type: serviceName,
       txtRecord: txtRecord
     )
   }
-  
+
   private func createTXTRecord() -> NWTXTRecord {
     var txtData: [String: String] = [:]
-    
+
     // Add VM identifier
     if let vmIdentifier = vmIdentifier {
       txtData["vmid"] = vmIdentifier
     }
-    
+
     // Add HarvestBin version
     txtData["version"] = "1.0.0"
-    
+
     // Add capabilities
     txtData["capabilities"] = currentCapabilities.joined(separator: ",")
-    
+
     // Add SSH status if SSH is a capability
     if currentCapabilities.contains("ssh") {
       txtData["ssh"] = "enabled"
     }
-    
+
     // Add timestamp
     txtData["timestamp"] = ISO8601DateFormatter().string(from: Date())
-    
+
     return NWTXTRecord(txtData)
   }
-  
+
   private func handleStateUpdate(_ state: NWListener.State) {
     switch state {
     case .ready:
@@ -208,18 +208,18 @@ public final class NetworkDiscoveryService: DiscoveryService {
       logger.debug("Network listener state: \(state)")
     }
   }
-  
+
   private func handleNewConnection(_ connection: NWConnection) {
     logger.info("New connection received from: \(connection.endpoint)")
-    
+
     // Set up connection handlers
     connection.stateUpdateHandler = { [weak self] state in
       self?.logger.debug("Connection state: \(state)")
     }
-    
+
     // Start the connection
     connection.start(queue: .main)
-    
+
     // For Phase 1, we'll just accept connections but not handle data yet
     // Full command processing will be implemented in HostConnectionService
   }
@@ -235,12 +235,12 @@ public final class DiscoveryUtils {
     let uuid = UUID().uuidString.prefix(8)
     return "\(hostname)-\(uuid)"
   }
-  
+
   /// Gets the current system's capabilities
   /// - Returns: Array of capability strings
   public static func getSystemCapabilities() async -> [String] {
     var capabilities: [String] = ["ssh", "systeminfo"]
-    
+
     // Add SSH capability if available
     do {
       let executor = DefaultSystemSetupExecutor()
@@ -252,7 +252,7 @@ public final class DiscoveryUtils {
       // SSH not available
       capabilities.removeAll { $0 == "ssh" }
     }
-    
+
     return capabilities
   }
 }
@@ -263,7 +263,7 @@ public struct DiscoveryConfiguration: Sendable {
   public let port: UInt16
   public let vmIdentifier: String
   public let capabilities: [String]
-  
+
   public init(
     serviceName: String = "_bushel-guest._tcp",
     port: UInt16 = 8080,
@@ -287,7 +287,7 @@ public enum DiscoveryError: Error, Sendable {
   case missingVMIdentifier
   case invalidConfiguration(String)
   case networkUnavailable
-  
+
   public var localizedDescription: String {
     switch self {
     case .advertisingFailed(let error):

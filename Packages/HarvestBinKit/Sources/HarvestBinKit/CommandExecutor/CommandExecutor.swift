@@ -10,7 +10,7 @@ import BushelHarvestCore
 import Foundation
 
 /// Main command execution interface for guest-side command processing
-/// 
+///
 /// Validates commands, performs security checks, and routes to appropriate executors.
 public protocol CommandExecutor: Sendable {
   /// Executes a harvest command and returns the response
@@ -18,7 +18,7 @@ public protocol CommandExecutor: Sendable {
   /// - Returns: The command response
   /// - Throws: CommandExecutorError on execution failure
   func execute(_ command: HarvestCommand) async throws -> HarvestResponse
-  
+
   /// Validates if a command can be executed
   /// - Parameter command: The command to validate
   /// - Returns: True if the command can be executed
@@ -30,7 +30,7 @@ public final class DefaultCommandExecutor: CommandExecutor {
   private let systemSetupExecutor: SystemSetupExecutor
   private let securityValidator: SecurityValidator
   private let logger: Logger
-  
+
   /// Initializes the command executor
   /// - Parameters:
   ///   - systemSetupExecutor: Executor for systemsetup commands
@@ -45,22 +45,22 @@ public final class DefaultCommandExecutor: CommandExecutor {
     self.securityValidator = securityValidator
     self.logger = logger
   }
-  
+
   public func execute(_ command: HarvestCommand) async throws -> HarvestResponse {
     logger.info("Executing command: \(command.name)")
-    
+
     // Security validation
     guard securityValidator.validate(command) else {
       logger.error("Security validation failed for command: \(command.name)")
       throw CommandExecutorError.securityValidationFailed(command.name)
     }
-    
+
     // Check if we can execute the command
     guard canExecute(command) else {
       logger.error("Cannot execute command: \(command.name)")
       throw CommandExecutorError.unsupportedCommand(command.name)
     }
-    
+
     // Route command to appropriate executor
     do {
       let response = try await executeCommand(command)
@@ -71,7 +71,7 @@ public final class DefaultCommandExecutor: CommandExecutor {
       throw CommandExecutorError.executionFailed(command.name, underlying: error)
     }
   }
-  
+
   public func canExecute(_ command: HarvestCommand) -> Bool {
     switch command.payload {
     case .system(let systemCommand):
@@ -83,9 +83,9 @@ public final class DefaultCommandExecutor: CommandExecutor {
       return true
     }
   }
-  
+
   // MARK: - Private Methods
-  
+
   private func executeCommand(_ command: HarvestCommand) async throws -> HarvestResponse {
     switch command.payload {
     case .system(let systemCommand):
@@ -96,8 +96,10 @@ public final class DefaultCommandExecutor: CommandExecutor {
       return try await executeSecurityCommand(securityCommand, from: command)
     }
   }
-  
-  private func executeSystemCommand(_ systemCommand: SystemCommand, from originalCommand: HarvestCommand) async throws -> HarvestResponse {
+
+  private func executeSystemCommand(
+    _ systemCommand: SystemCommand, from originalCommand: HarvestCommand
+  ) async throws -> HarvestResponse {
     switch systemCommand {
     case .ping:
       // Simple ping response
@@ -106,11 +108,12 @@ public final class DefaultCommandExecutor: CommandExecutor {
         commandID: originalCommand.id,
         timestamp: Date(),
         status: .success,
-        payload: .systemInfo(SystemInfo(
-          version: "1.0.0",
-          capabilities: ["ssh", "systeminfo"],
-          status: .ready
-        ))
+        payload: .systemInfo(
+          SystemInfo(
+            version: "1.0.0",
+            capabilities: ["ssh", "systeminfo"],
+            status: .ready
+          ))
       )
     case .systemInfo:
       // Return system information
@@ -124,8 +127,10 @@ public final class DefaultCommandExecutor: CommandExecutor {
       )
     }
   }
-  
-  private func executeRemoteCommand(_ remoteCommand: RemoteAccessCommand, from originalCommand: HarvestCommand) async throws -> HarvestResponse {
+
+  private func executeRemoteCommand(
+    _ remoteCommand: RemoteAccessCommand, from originalCommand: HarvestCommand
+  ) async throws -> HarvestResponse {
     switch remoteCommand {
     case .ssh(let sshCommand):
       return try await executeSSHCommand(sshCommand, from: originalCommand)
@@ -133,55 +138,62 @@ public final class DefaultCommandExecutor: CommandExecutor {
       return try await getRemoteStatus(from: originalCommand)
     }
   }
-  
-  private func executeSSHCommand(_ sshCommand: SSHCommand, from originalCommand: HarvestCommand) async throws -> HarvestResponse {
+
+  private func executeSSHCommand(_ sshCommand: SSHCommand, from originalCommand: HarvestCommand)
+    async throws -> HarvestResponse {
     switch sshCommand {
     case .enable:
       try await systemSetupExecutor.enableSSH()
-      
+
       return HarvestResponse(
         id: UUID(),
         commandID: originalCommand.id,
         timestamp: Date(),
         status: .success,
-        payload: .remoteStatus(RemoteStatus(
-          access: .ssh(SSHStatus(isEnabled: true, port: 22))
-        ))
+        payload: .remoteStatus(
+          RemoteStatus(
+            access: .ssh(SSHStatus(isEnabled: true, port: 22))
+          ))
       )
-      
+
     case .disable:
       try await systemSetupExecutor.disableSSH()
-      
+
       return HarvestResponse(
         id: UUID(),
         commandID: originalCommand.id,
         timestamp: Date(),
         status: .success,
-        payload: .remoteStatus(RemoteStatus(
-          access: .ssh(SSHStatus(isEnabled: false, port: nil))
-        ))
+        payload: .remoteStatus(
+          RemoteStatus(
+            access: .ssh(SSHStatus(isEnabled: false, port: nil))
+          ))
       )
     }
   }
-  
+
   private func getRemoteStatus(from originalCommand: HarvestCommand) async throws -> HarvestResponse {
     let isSSHEnabled = try await systemSetupExecutor.getSSHStatus()
-    
+
     return HarvestResponse(
       id: UUID(),
       commandID: originalCommand.id,
       timestamp: Date(),
       status: .success,
-      payload: .remoteStatus(RemoteStatus(
-        access: .ssh(SSHStatus(
-          isEnabled: isSSHEnabled,
-          port: isSSHEnabled ? 22 : nil
+      payload: .remoteStatus(
+        RemoteStatus(
+          access: .ssh(
+            SSHStatus(
+              isEnabled: isSSHEnabled,
+              port: isSSHEnabled ? 22 : nil
+            ))
         ))
-      ))
     )
   }
-  
-  private func executeSecurityCommand(_ securityCommand: SecurityCommand, from originalCommand: HarvestCommand) async throws -> HarvestResponse {
+
+  private func executeSecurityCommand(
+    _ securityCommand: SecurityCommand, from originalCommand: HarvestCommand
+  ) async throws -> HarvestResponse {
     // Security commands implementation
     // For Phase 1, return a basic response
     return HarvestResponse(
@@ -189,24 +201,25 @@ public final class DefaultCommandExecutor: CommandExecutor {
       commandID: originalCommand.id,
       timestamp: Date(),
       status: .success,
-      payload: .systemInfo(SystemInfo(
-        version: "1.0.0",
-        capabilities: ["ssh"],
-        status: .ready
-      ))
+      payload: .systemInfo(
+        SystemInfo(
+          version: "1.0.0",
+          capabilities: ["ssh"],
+          status: .ready
+        ))
     )
   }
-  
+
   private func canExecuteSystemCommand(_ command: SystemCommand) -> Bool {
     // All system commands are currently supported
     return true
   }
-  
+
   private func canExecuteRemoteCommand(_ command: RemoteAccessCommand) -> Bool {
     // All remote commands are currently supported
     return true
   }
-  
+
   private func gatherSystemInfo() async throws -> SystemInfo {
     // Gather basic system information
     return SystemInfo(
@@ -225,18 +238,18 @@ public protocol SecurityValidator: Sendable {
 /// Default security validator
 public struct DefaultSecurityValidator: SecurityValidator {
   public init() {}
-  
+
   public func validate(_ command: HarvestCommand) -> Bool {
     // Basic security validation
     // Check if command requires elevation
     let requiresElevation = command.metadata?["requiresElevation"] == "true"
-    
+
     if requiresElevation {
       // For Phase 1, assume we have necessary privileges
       // In production, this would check actual privileges
       return true
     }
-    
+
     return true
   }
 }
@@ -250,11 +263,11 @@ public protocol Logger: Sendable {
 /// Console logger implementation
 public struct ConsoleLogger: Logger {
   public init() {}
-  
+
   public func info(_ message: String) {
     print("[INFO] \(Date()): \(message)")
   }
-  
+
   public func error(_ message: String) {
     print("[ERROR] \(Date()): \(message)")
   }
@@ -266,7 +279,7 @@ public enum CommandExecutorError: Error, Sendable {
   case securityValidationFailed(String)
   case executionFailed(String, underlying: Error)
   case missingDependency(String)
-  
+
   public var localizedDescription: String {
     switch self {
     case .unsupportedCommand(let command):
