@@ -21,7 +21,13 @@ jobs:
     container: ${{ matrix.image }}
     steps:
       - uses: actions/checkout@v4
-      - uses: brightdigit/swift-build@v1.4.0
+      - name: Update BushelKit dependency to use subrepo branch
+        run: |
+          sed -i 's|.package(path: "../../../BushelKit")|.package(url: "https://github.com/brightdigit/BushelKit.git", branch: "subrepo")|g' Packages/HarvestBinKit/Package.swift
+      - uses: brightdigit/swift-build@v1.5.0-beta.2
+        with:          
+          fail-on-empty-output: true
+          skip-package-resolved: true
       - uses: sersoft-gmbh/swift-coverage-action@v4
         id: coverage-files
         with:          
@@ -53,7 +59,7 @@ jobs:
   #           swift-build: 6.1-RELEASE
   #   steps:
   #     - uses: actions/checkout@v4
-  #     - uses: brightdigit/swift-build@v1.4.0
+  #     - uses: brightdigit/swift-build@v1.5.0-beta.2
   #       with:
   #         windows-swift-version: ${{ matrix.swift-version }}
   #         windows-swift-build: ${{ matrix.swift-build }}
@@ -136,8 +142,11 @@ jobs:
   
     steps:
       - uses: actions/checkout@v4
+      - name: Update BushelKit dependency to use subrepo branch
+        run: |
+          sed -i '' 's|.package(path: "../../../BushelKit")|.package(url: "https://github.com/brightdigit/BushelKit.git", branch: "subrepo")|g' Packages/HarvestBinKit/Package.swift
       - name: Build and Test
-        uses: brightdigit/swift-build@v1.4.0
+        uses: brightdigit/swift-build@v1.5.0-beta.2
         with:
           scheme: ${{ env.PACKAGE_NAME }}-Package
           type: ${{ matrix.type }}
@@ -145,6 +154,7 @@ jobs:
           deviceName: ${{ matrix.deviceName }}
           osVersion: ${{ matrix.osVersion }}
           download-platform: ${{ matrix.download-platform || false }}
+          skip-package-resolved: true
           
       # Common Coverage Steps
       - name: Process Coverage
@@ -163,5 +173,8 @@ jobs:
     needs: [build-ubuntu, build-macos]
     steps:
       - uses: actions/checkout@v4
+      - name: Update BushelKit dependency to use subrepo branch
+        run: |
+          sed -i 's|.package(path: "../../../BushelKit")|.package(url: "https://github.com/brightdigit/BushelKit.git", branch: "subrepo")|g' Packages/HarvestBinKit/Package.swift
       - name: Lint
         run: ./Scripts/lint.sh
