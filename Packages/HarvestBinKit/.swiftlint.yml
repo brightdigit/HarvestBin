@@ -1,0 +1,8 @@
+excluded:
+  - .build
+  - .swiftpm
+  - DerivedData
+  - Package.swift
+  - Package
+
+# Inherit most rules from parent

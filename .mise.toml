@@ -1,0 +1,18 @@
+[tools]
+# Tools available in other registries (better performance/security)
+"aqua:realm/SwiftLint" = "0.58.0"
+"asdf:mise-plugins/mise-periphery" = "3.0.1"
+
+# Tools only available via SPM
+"spm:dral3x/StringsLint" = "0.1.9"
+"spm:swiftlang/swift-format" = "600.0.0"
+# "spm:synesthesia-it/Murray" = "latest"
+
+"ubi:mikefarah/yq" = "latest"
+
+# Ruby management
+ruby = "2.7.8"
+
+tuist = "4.134.0"
+[settings]
+experimental = true
