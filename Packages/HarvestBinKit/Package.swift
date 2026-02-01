@@ -32,6 +32,12 @@ let package = Package(
               .product(name: "BushelGuestProfile", package: "BushelKit"),
               .product(name: "BushelHarvestCore", package: "BushelKit")
             ]
+        ),
+        .testTarget(
+            name: "HarvestBinKitTests",
+            dependencies: [
+              "HarvestBinKit"
+            ]
         )
     ]
 )
