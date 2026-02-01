@@ -9,21 +9,21 @@ import BushelHarvestCore
 import Foundation
 
 /// Main HarvestBin service for guest-side VM functionality
-/// 
+///
 /// Coordinates all HarvestBin services including command execution, remote access, and host communication.
-public final class HarvestBinService: Sendable {
+public actor HarvestBinService {
   private let commandExecutor: CommandExecutor
   private let remoteAccessManager: RemoteAccessManager
   private let discoveryService: DiscoveryService
   private let hostConnectionService: HostConnectionService
   private let logger: Logger
-  
+
   private var isRunning: Bool = false
-  
+
   /// Initializes HarvestBinService with default components
   public init() {
     let logger = ConsoleLogger()
-    
+
     self.commandExecutor = DefaultCommandExecutor(logger: logger)
     self.remoteAccessManager = DefaultRemoteAccessManager(logger: logger)
     self.discoveryService = NetworkDiscoveryService(logger: logger)
@@ -33,7 +33,7 @@ public final class HarvestBinService: Sendable {
     )
     self.logger = logger
   }
-  
+
   /// Initializes HarvestBinService with custom components
   /// - Parameters:
   ///   - commandExecutor: Command execution service
@@ -54,7 +54,7 @@ public final class HarvestBinService: Sendable {
     self.hostConnectionService = hostConnectionService
     self.logger = logger
   }
-  
+
   /// Starts all HarvestBin services
   /// - Parameter configuration: Service configuration
   /// - Throws: HarvestBinError on startup failure
@@ -63,18 +63,18 @@ public final class HarvestBinService: Sendable {
       logger.info("HarvestBin services are already running")
       return
     }
-    
+
     logger.info("Starting HarvestBin services")
-    
+
     do {
       // Set up command handler for host connections
-      hostConnectionService.setCommandHandler { [weak self] command in
+      await hostConnectionService.setCommandHandler { [weak self] command in
         guard let self = self else {
           throw HarvestBinError.serviceUnavailable("HarvestBin")
         }
         return try await self.commandExecutor.execute(command)
       }
-      
+
       // Start host connection service
       let connectionConfig = ConnectionConfiguration(
         port: configuration.port,
@@ -82,40 +82,40 @@ public final class HarvestBinService: Sendable {
         capabilities: configuration.capabilities
       )
       try await hostConnectionService.start(configuration: connectionConfig)
-      
+
       isRunning = true
       logger.info("HarvestBin services started successfully")
-      
+
       // Log service status
       await logServiceStatus()
-      
+
     } catch {
       logger.error("Failed to start HarvestBin services: \(error)")
       throw HarvestBinError.startupFailed(underlying: error)
     }
   }
-  
+
   /// Stops all HarvestBin services
   public func stop() async {
     guard isRunning else {
       logger.info("HarvestBin services are not running")
       return
     }
-    
+
     logger.info("Stopping HarvestBin services")
-    
+
     // Stop host connection service
     await hostConnectionService.stop()
-    
+
     isRunning = false
     logger.info("HarvestBin services stopped")
   }
-  
+
   /// Gets the current status of all services
   /// - Returns: Service status information
   public func getStatus() async -> HarvestBinStatus {
     let connectionStatus = await hostConnectionService.status
-    
+
     return HarvestBinStatus(
       isRunning: isRunning,
       connectionService: connectionStatus,
@@ -123,7 +123,7 @@ public final class HarvestBinService: Sendable {
       capabilities: await getCapabilities()
     )
   }
-  
+
   /// Executes a command directly (for testing)
   /// - Parameter command: The command to execute
   /// - Returns: The command response
@@ -131,7 +131,7 @@ public final class HarvestBinService: Sendable {
   public func executeCommand(_ command: HarvestCommand) async throws -> HarvestResponse {
     return try await commandExecutor.execute(command)
   }
-  
+
   /// Enables remote access service
   /// - Parameter type: The type of remote access to enable
   /// - Throws: HarvestBinError on failure
@@ -144,7 +144,7 @@ public final class HarvestBinService: Sendable {
       throw HarvestBinError.remoteAccessFailed(underlying: error)
     }
   }
-  
+
   /// Disables remote access service
   /// - Parameter type: The type of remote access to disable
   /// - Throws: HarvestBinError on failure
@@ -157,12 +157,12 @@ public final class HarvestBinService: Sendable {
       throw HarvestBinError.remoteAccessFailed(underlying: error)
     }
   }
-  
+
   // MARK: - Private Methods
-  
+
   private func logServiceStatus() async {
     let status = await getStatus()
-    
+
     logger.info("Service Status:")
     logger.info("  Running: \(status.isRunning)")
     logger.info("  VM ID: \(status.vmIdentifier)")
@@ -170,11 +170,11 @@ public final class HarvestBinService: Sendable {
     logger.info("  Connections: \(status.connectionService.connectionCount)")
     logger.info("  Advertising: \(status.connectionService.isAdvertising)")
   }
-  
+
   private func getVMIdentifier() async -> String {
     return DiscoveryUtils.generateVMIdentifier()
   }
-  
+
   private func getCapabilities() async -> [String] {
     return await DiscoveryUtils.getSystemCapabilities()
   }
@@ -186,7 +186,7 @@ public struct HarvestBinConfiguration: Sendable {
   public let vmIdentifier: String
   public let capabilities: [String]
   public let autoStartRemoteAccess: Bool
-  
+
   public init(
     port: UInt16 = 8080,
     vmIdentifier: String = DiscoveryUtils.generateVMIdentifier(),
@@ -206,7 +206,7 @@ public struct HarvestBinStatus: Sendable {
   public let connectionService: ConnectionServiceStatus
   public let vmIdentifier: String
   public let capabilities: [String]
-  
+
   public init(
     isRunning: Bool,
     connectionService: ConnectionServiceStatus,
@@ -226,7 +226,7 @@ public enum HarvestBinError: Error, Sendable {
   case serviceUnavailable(String)
   case remoteAccessFailed(underlying: Error)
   case configurationInvalid(String)
-  
+
   public var localizedDescription: String {
     switch self {
     case .startupFailed(let error):

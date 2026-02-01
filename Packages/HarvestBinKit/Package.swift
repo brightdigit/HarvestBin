@@ -7,11 +7,11 @@ let package = Package(
     name: "HarvestBinKit",
     platforms: [
       SupportedPlatform.macOS(.v12),
-    SupportedPlatform.iOS(.v15),
-    SupportedPlatform.watchOS(.v8),
-    SupportedPlatform.tvOS(.v15),
-    SupportedPlatform.visionOS(.v1),
-    SupportedPlatform.macCatalyst(.v15)
+    SupportedPlatform.iOS(.v18),
+    SupportedPlatform.watchOS(.v11),
+    SupportedPlatform.tvOS(.v18),
+    SupportedPlatform.visionOS(.v2),
+    SupportedPlatform.macCatalyst(.v18)
     ],
     dependencies: [
       .package(path: "../../../BushelKit")
@@ -30,7 +30,13 @@ let package = Package(
             dependencies: [
               .product(name: "BushelFoundation", package: "BushelKit"),
               .product(name: "BushelGuestProfile", package: "BushelKit"),
-              .product(name: "BushelHarvestCore", package: "BushelKit"),
+              .product(name: "BushelHarvestCore", package: "BushelKit")
+            ]
+        ),
+        .testTarget(
+            name: "HarvestBinKitTests",
+            dependencies: [
+              "HarvestBinKit"
             ]
         )
     ]
