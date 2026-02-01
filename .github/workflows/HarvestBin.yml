@@ -175,11 +175,12 @@ jobs:
 
   lint:
     name: Linting
-    if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}  
+    if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
     runs-on: ubuntu-latest
     needs: [build-ubuntu, build-macos]
     steps:
       - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v2
       - name: Update BushelKit dependency to use subrepo branch
         run: |
           sed -i 's|.package(path: "../../../BushelKit")|.package(url: "https://github.com/brightdigit/BushelKit.git", branch: "subrepo")|g' Packages/HarvestBinKit/Package.swift
