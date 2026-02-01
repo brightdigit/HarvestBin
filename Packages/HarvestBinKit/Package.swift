@@ -14,7 +14,7 @@ let package = Package(
     SupportedPlatform.macCatalyst(.v15)
     ],
     dependencies: [
-      .package(path: "../../../BushelKit")
+      .package(url: "https://github.com/brightdigit/BushelKit", branch: "subrepo")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
