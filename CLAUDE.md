@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Tech Stack:**
 - Swift 6.1+ with Tuist for project generation
-- macOS 12+ deployment target (supports iOS 15+, watchOS 8+, tvOS 15+, visionOS 1+, macCatalyst 15+)
+- macOS 12+ deployment target (supports iOS 18+, watchOS 11+, tvOS 18+, visionOS 2+, macCatalyst 18+)
 - Async/await for all I/O operations
 - Sendable types for thread safety
 - Network framework for service discovery and communication
@@ -63,7 +63,7 @@ tuist clean
 **Tuist Version:** Managed via `mise.toml`:
 ```toml
 [tools]
-tuist = "4.46.0"
+tuist = "4.134.0"
 ```
 
 Install via mise: `mise install`

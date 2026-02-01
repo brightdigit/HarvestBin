@@ -419,11 +419,11 @@ public enum RemoteAccessError: Error, Sendable {
 
     public func monitorServices(
       _ callback: @escaping @Sendable (RemoteAccessType, RemoteAccessStatus) -> Void
-    ) -> UUID {
+    ) async -> UUID {
       UUID()
     }
 
-    public func stopMonitoring(_ monitorID: UUID) {}
+    public func stopMonitoring(_ monitorID: UUID) async {}
   }
 
   /// Stub SSH manager for non-macOS platforms

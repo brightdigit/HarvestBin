@@ -418,7 +418,7 @@ public enum HostConnectionError: Error, Sendable {
 
     public func setCommandHandler(
       _ handler: @escaping @Sendable (HarvestCommand) async throws -> HarvestResponse
-    ) {}
+    ) async {}
   }
 
 #endif
