@@ -81,6 +81,8 @@ public final class DefaultCommandExecutor: CommandExecutor {
     case .security:
       // Security commands are handled by security validator
       return true
+    @unknown default:
+      return false
     }
   }
 
@@ -94,6 +96,8 @@ public final class DefaultCommandExecutor: CommandExecutor {
       return try await executeRemoteCommand(remoteCommand, from: command)
     case .security(let securityCommand):
       return try await executeSecurityCommand(securityCommand, from: command)
+    @unknown default:
+      throw CommandExecutorError.unsupportedCommand("Unknown command type")
     }
   }
 
@@ -104,26 +108,26 @@ public final class DefaultCommandExecutor: CommandExecutor {
     case .ping:
       // Simple ping response
       return HarvestResponse(
-        id: UUID(),
-        commandID: originalCommand.id,
+        requestId: originalCommand.id,
         timestamp: Date(),
-        status: .success,
-        payload: .systemInfo(
-          SystemInfo(
-            version: "1.0.0",
-            capabilities: ["ssh", "systeminfo"],
-            status: .ready
-          ))
+        success: true,
+        payload: .systemStatus("pong")
       )
-    case .systemInfo:
-      // Return system information
-      let systemInfo = try await gatherSystemInfo()
+    case .status:
+      // Return system status information
       return HarvestResponse(
-        id: UUID(),
-        commandID: originalCommand.id,
+        requestId: originalCommand.id,
         timestamp: Date(),
-        status: .success,
-        payload: .systemInfo(systemInfo)
+        success: true,
+        payload: .systemStatus("HarvestBin v1.0.0 - running")
+      )
+    @unknown default:
+      // Handle unknown system commands
+      return HarvestResponse(
+        requestId: originalCommand.id,
+        timestamp: Date(),
+        success: false,
+        payload: .error("Unknown system command")
       )
     }
   }
@@ -146,28 +150,43 @@ public final class DefaultCommandExecutor: CommandExecutor {
       try await systemSetupExecutor.enableSSH()
 
       return HarvestResponse(
-        id: UUID(),
-        commandID: originalCommand.id,
+        requestId: originalCommand.id,
         timestamp: Date(),
-        status: .success,
+        success: true,
         payload: .remoteStatus(
-          RemoteStatus(
-            access: .ssh(SSHStatus(isEnabled: true, port: 22))
-          ))
+          RemoteStatusData(
+            access: RemoteAccess(
+              ssh: SSHStatus(isEnabled: true, port: 22)
+            )
+          )
+        )
       )
 
     case .disable:
       try await systemSetupExecutor.disableSSH()
 
       return HarvestResponse(
-        id: UUID(),
-        commandID: originalCommand.id,
+        requestId: originalCommand.id,
         timestamp: Date(),
-        status: .success,
+        success: true,
         payload: .remoteStatus(
-          RemoteStatus(
-            access: .ssh(SSHStatus(isEnabled: false, port: nil))
-          ))
+          RemoteStatusData(
+            access: RemoteAccess(
+              ssh: SSHStatus(isEnabled: false, port: nil)
+            )
+          )
+        )
+      )
+
+    case .status:
+      return try await getRemoteStatus(from: originalCommand)
+
+    @unknown default:
+      return HarvestResponse(
+        requestId: originalCommand.id,
+        timestamp: Date(),
+        success: false,
+        payload: .error("Unknown SSH command")
       )
     }
   }
@@ -176,18 +195,19 @@ public final class DefaultCommandExecutor: CommandExecutor {
     let isSSHEnabled = try await systemSetupExecutor.getSSHStatus()
 
     return HarvestResponse(
-      id: UUID(),
-      commandID: originalCommand.id,
+      requestId: originalCommand.id,
       timestamp: Date(),
-      status: .success,
+      success: true,
       payload: .remoteStatus(
-        RemoteStatus(
-          access: .ssh(
-            SSHStatus(
+        RemoteStatusData(
+          access: RemoteAccess(
+            ssh: SSHStatus(
               isEnabled: isSSHEnabled,
               port: isSSHEnabled ? 22 : nil
-            ))
-        ))
+            )
+          )
+        )
+      )
     )
   }
 
@@ -197,16 +217,10 @@ public final class DefaultCommandExecutor: CommandExecutor {
     // Security commands implementation
     // For Phase 1, return a basic response
     return HarvestResponse(
-      id: UUID(),
-      commandID: originalCommand.id,
+      requestId: originalCommand.id,
       timestamp: Date(),
-      status: .success,
-      payload: .systemInfo(
-        SystemInfo(
-          version: "1.0.0",
-          capabilities: ["ssh"],
-          status: .ready
-        ))
+      success: true,
+      payload: .securityStatus("authorized")
     )
   }
 
@@ -218,15 +232,6 @@ public final class DefaultCommandExecutor: CommandExecutor {
   private func canExecuteRemoteCommand(_ command: RemoteAccessCommand) -> Bool {
     // All remote commands are currently supported
     return true
-  }
-
-  private func gatherSystemInfo() async throws -> SystemInfo {
-    // Gather basic system information
-    return SystemInfo(
-      version: "1.0.0",
-      capabilities: ["ssh", "systeminfo"],
-      status: .ready
-    )
   }
 }
 
@@ -258,6 +263,7 @@ public struct DefaultSecurityValidator: SecurityValidator {
 public protocol Logger: Sendable {
   func info(_ message: String)
   func error(_ message: String)
+  func debug(_ message: String)
 }
 
 /// Console logger implementation
@@ -270,6 +276,10 @@ public struct ConsoleLogger: Logger {
 
   public func error(_ message: String) {
     print("[ERROR] \(Date()): \(message)")
+  }
+
+  public func debug(_ message: String) {
+    print("[DEBUG] \(Date()): \(message)")
   }
 }
 

@@ -26,8 +26,24 @@ STRINGSLINT_RUNNER="$LINT_RUNNER spm:dral3x/StringsLint -- stringslint"
 
 function lint_swift_package() {
     pushd "$1"
+
+    # Build list of paths to lint (only if they exist)
+    LINT_PATHS=""
+    for path in Sources Tests Package; do
+        if [ -d "$path" ]; then
+            LINT_PATHS="$LINT_PATHS $path"
+        fi
+    done
+
+    # Skip if no paths to lint
+    if [ -z "$LINT_PATHS" ]; then
+        echo "No source directories found to lint in $1"
+        popd
+        return
+    fi
+
     if [ -z "$CI" ]; then
-        run_command $SWIFT_FORMAT_RUNNER format $SWIFTFORMAT_OPTIONS --recursive --parallel --in-place Sources Tests Package
+        run_command $SWIFT_FORMAT_RUNNER format $SWIFTFORMAT_OPTIONS --recursive --parallel --in-place $LINT_PATHS
         run_command $SWIFTLINT_RUNNER --fix
     else
         set -e
@@ -37,7 +53,7 @@ function lint_swift_package() {
     fi
 
     run_command $SWIFTLINT_RUNNER lint $SWIFTLINT_OPTIONS
-    run_command $SWIFT_FORMAT_RUNNER lint --recursive --parallel $SWIFTFORMAT_OPTIONS Sources Tests Package
+    run_command $SWIFT_FORMAT_RUNNER lint --recursive --parallel $SWIFTFORMAT_OPTIONS $LINT_PATHS
     popd
 }
 
@@ -47,14 +63,17 @@ echo "Lint runner: $LINT_RUNNER"
 if [ "$LINT_MODE" == "NONE" ]; then
 		exit
 elif [ "$LINT_MODE" == "STRICT" ]; then
-		SWIFTFORMAT_OPTIONS=""
+		SWIFTFORMAT_OPTIONS="--ignore-unparsable-files"
 		SWIFTLINT_OPTIONS="--strict"
 		STRINGSLINT_OPTIONS="--config .strict.stringslint.yml"
 else
-		SWIFTFORMAT_OPTIONS=""
+		SWIFTFORMAT_OPTIONS="--ignore-unparsable-files"
 		SWIFTLINT_OPTIONS=""
 		STRINGSLINT_OPTIONS="--config .stringslint.yml"
 fi
+
+# Common exclusions for build artifacts and dependencies
+EXCLUDE_PATHS=".build .swiftpm DerivedData Carthage Pods *.generated.swift"
 
 if [ -z "$SRCROOT" ]; then
 		SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )

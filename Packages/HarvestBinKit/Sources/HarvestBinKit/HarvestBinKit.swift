@@ -11,7 +11,7 @@ import Foundation
 /// Main HarvestBin service for guest-side VM functionality
 ///
 /// Coordinates all HarvestBin services including command execution, remote access, and host communication.
-public final class HarvestBinService: Sendable {
+public actor HarvestBinService {
   private let commandExecutor: CommandExecutor
   private let remoteAccessManager: RemoteAccessManager
   private let discoveryService: DiscoveryService
@@ -68,7 +68,7 @@ public final class HarvestBinService: Sendable {
 
     do {
       // Set up command handler for host connections
-      hostConnectionService.setCommandHandler { [weak self] command in
+      await hostConnectionService.setCommandHandler { [weak self] command in
         guard let self = self else {
           throw HarvestBinError.serviceUnavailable("HarvestBin")
         }
