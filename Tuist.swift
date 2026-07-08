@@ -1,3 +1,3 @@
 import ProjectDescription
 
-let tuist = Tuist(fullHandle: "leogdion/HarvestBin", project: .tuist())
+let tuist = Tuist(project: .tuist())
