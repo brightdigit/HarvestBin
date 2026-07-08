@@ -5,6 +5,7 @@
 // Copyright (c) 2025 BrightDigit.
 //
 
+import BushelHarvestCore
 import Foundation
 
 /// Service advertising for VM discovery using Network framework
@@ -72,7 +73,7 @@ public struct DiscoveryConfiguration: Sendable {
 
   public init(
     serviceName: String = "_bushel-guest._tcp",
-    port: UInt16 = 8080,
+    port: UInt16 = UInt16(HarvestConfiguration.defaultPort),
     vmIdentifier: String = DiscoveryUtils.generateVMIdentifier(),
     capabilities: [String] = ["ssh", "systeminfo"]
   ) {
@@ -122,7 +123,7 @@ public enum DiscoveryError: Error, Sendable {
   /// Network framework-based service advertising
   public actor NetworkDiscoveryService: DiscoveryService {
     private let serviceName: String = "_bushel-guest._tcp"
-    private let servicePort: UInt16 = 8080
+    private let servicePort: UInt16 = UInt16(HarvestConfiguration.defaultPort)
 
     private var listener: NWListener?
     private var vmIdentifier: String?
