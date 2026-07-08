@@ -13,6 +13,12 @@ let package = Package(
     SupportedPlatform.visionOS(.v2),
     SupportedPlatform.macCatalyst(.v18)
     ],
+    products: [
+        .library(
+            name: "HarvestBinKit",
+            targets: ["HarvestBinKit"]
+        )
+    ],
     dependencies: [
       .package(path: "../../../BushelKit")
     ],
