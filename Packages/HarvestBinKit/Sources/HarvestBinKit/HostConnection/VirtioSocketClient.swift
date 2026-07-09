@@ -77,12 +77,12 @@ import Foundation
         throw HostConnectionError.connectionFailed(POSIXError(.ENOTCONN))
       }
 
-      let fd = socketFD
+      let descriptor = socketFD
 
       try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
         ioQueue.async {
           do {
-            try HarvestMessageFraming.writeMessage(descriptor: fd, data: data)
+            try HarvestMessageFraming.writeMessage(descriptor: descriptor, data: data)
             continuation.resume()
           } catch {
             continuation.resume(throwing: Self.connectionError(from: error))
@@ -99,14 +99,13 @@ import Foundation
         throw HostConnectionError.connectionFailed(POSIXError(.ENOTCONN))
       }
 
-      let fd = socketFD
+      let descriptor = socketFD
 
-      return try await withCheckedThrowingContinuation {
-        (continuation: CheckedContinuation<Data, Error>) in
+      return try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Data, Error>) in
         ioQueue.async {
           do {
             let data = try HarvestMessageFraming.readMessage(
-              descriptor: fd, maxLength: HarvestConfiguration.maxMessageLength
+              descriptor: descriptor, maxLength: HarvestConfiguration.maxMessageLength
             )
             continuation.resume(returning: data)
           } catch {
@@ -118,15 +117,15 @@ import Foundation
 
     /// Disconnects from the host
     public func disconnect() {
-      let fd = socketFD
-      guard fd >= 0 else {
+      let descriptor = socketFD
+      guard descriptor >= 0 else {
         return
       }
       // Invalidate synchronously so new send/receive calls fail the guard, then
       // close on the serial queue so the close runs after any in-flight syscall.
       socketFD = -1
       ioQueue.async {
-        Darwin.close(fd)
+        Darwin.close(descriptor)
       }
     }
 
@@ -146,6 +145,10 @@ import Foundation
     }
   }
 
+  // Names below mirror the C ABI from sys/vsock.h; they must match exactly for
+  // memory layout, so the Swift naming rules are suppressed for this block.
+  // swiftlint:disable identifier_name type_name
+
   // sockaddr_vm structure for AF_VSOCK (from sys/vsock.h)
   private struct sockaddr_vm {
     var svm_len: UInt8
@@ -158,4 +161,6 @@ import Foundation
   // Constants from sys/vsock.h
   private let AF_VSOCK: Int32 = 40
   private let SOCK_STREAM: Int32 = 1
+
+// swiftlint:enable identifier_name type_name
 #endif
