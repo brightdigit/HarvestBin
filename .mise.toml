@@ -13,6 +13,6 @@
 # Ruby management
 ruby = "2.7.8"
 
-tuist = "4.134.0"
+tuist = "4.202.0"
 [settings]
 experimental = true

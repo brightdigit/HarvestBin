@@ -20,16 +20,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Dependencies
 
-### BushelKit (Subrepo Branch)
+### BushelKit (3.0.0-alpha.4 Tag)
 
-**IMPORTANT:** This project **temporarily** depends on the **`subrepo`** branch of BushelKit, located at `../BushelKit`. This dependency will transition to the main branch once the harvest-related modules are merged.
-
-```bash
-# Ensure BushelKit is checked out to the subrepo branch
-cd ../BushelKit
-git checkout subrepo
-cd ../HarvestBin
-```
+**IMPORTANT:** This project depends on the **`3.0.0-alpha.4`** tagged release of BushelKit, fetched directly from GitHub via SwiftPM's `from:` version requirement. No local checkout of BushelKit is required — SwiftPM resolves it from the remote.
 
 The project uses these BushelKit modules:
 - **BushelFoundation** - Core abstractions, logging, and utilities
@@ -39,7 +32,7 @@ The project uses these BushelKit modules:
 The package reference in `Packages/HarvestBinKit/Package.swift`:
 ```swift
 dependencies: [
-  .package(path: "../../../BushelKit")
+  .package(url: "https://github.com/brightdigit/BushelKit.git", from: "3.0.0-alpha.4")
 ]
 ```
 
@@ -60,7 +53,7 @@ tuist clean
 # Edit Project.swift, then regenerate with `tuist generate`
 ```
 
-**Tuist Version:** Managed via `mise.toml`:
+**Tuist Version:** Managed via `.mise.toml`:
 ```toml
 [tools]
 tuist = "4.134.0"
@@ -340,7 +333,7 @@ HarvestBin/
 ├── Tuist.swift                   # Tuist configuration
 ├── Tuist/                        # Tuist helpers
 │   └── Package.swift
-├── mise.toml                     # Tool version management
+├── .mise.toml                    # Tool version management
 └── macos-defaults-commands.md    # Reference for macOS defaults/systemsetup
 ```
 
