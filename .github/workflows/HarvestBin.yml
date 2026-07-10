@@ -1,0 +1,179 @@
+name: HarvestBin
+on:
+  push:
+    branches-ignore:
+      - '*WIP'
+env:
+  PACKAGE_NAME: HarvestBin      
+jobs:
+  build-ubuntu:
+    name: Build on Ubuntu
+    runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
+    strategy:
+      matrix:
+        image:
+          - swift:6.1
+          - swift:6.2
+          - swiftlang/swift:nightly-6.3-noble
+    container: ${{ matrix.image }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: brightdigit/swift-build@v1.5.0-beta.2
+        with:
+          working-directory: ./Packages/HarvestBinKit
+          skip-package-resolved: true
+      - uses: sersoft-gmbh/swift-coverage-action@v4
+        id: coverage-files
+        with:
+          search-paths: |
+            ./Packages/HarvestBinKit/.build
+          fail-on-empty-output: true
+      - name: Set coverage flag
+        id: set-flag
+        run: echo "CODECOV_FLAGS=${MATRIX_IMAGE//\//-}" | sed 's/:/-/g' >> $GITHUB_ENV
+        env:
+          MATRIX_IMAGE: ${{ matrix.image }}
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4       
+        with:
+          fail_ci_if_error: true
+          flags: ${{ env.CODECOV_FLAGS }}
+          verbose: true        
+          token: ${{ secrets.CODECOV_TOKEN }}  
+          files: ${{ join(fromJSON(steps.coverage-files.outputs.files), ',') }}  
+  # build-windows:
+  #   name: Build on Windows
+  #   runs-on: ${{ matrix.runs-on }}
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       runs-on: [windows-2022, windows-2025]
+  #       include:
+  #         - swift-version: swift-6.2-release
+  #           swift-build: 6.2-RELEASE
+  #         - swift-version: swift-6.1-release
+  #           swift-build: 6.1-RELEASE
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: brightdigit/swift-build@v1.5.0-beta.2
+  #       with:
+  #         windows-swift-version: ${{ matrix.swift-version }}
+  #         windows-swift-build: ${{ matrix.swift-build }}
+  #     - name: Upload coverage to Codecov
+  #       uses: codecov/codecov-action@v5    
+  #       with:
+  #         fail_ci_if_error: true
+  #         flags: swift-${{ matrix.swift-version }},windows
+  #         verbose: true
+  #         token: ${{ secrets.CODECOV_TOKEN }}
+  #         os: windows
+  #         swift_project: HarvestBin            
+  build-macos:
+    name: Build on macOS
+    env:
+      PACKAGE_NAME: HarvestBin
+    runs-on: ${{ matrix.runs-on }}
+    if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # SPM Build Matrix
+          - runs-on: macos-15
+            xcode: "/Applications/Xcode_16.4.app"
+          - runs-on: macos-26
+            xcode: "/Applications/Xcode_26.0.app"
+
+          # macOS Build Matrix            
+          - type: macos
+            runs-on: macos-15
+            xcode: "/Applications/Xcode_16.4.app"
+
+          - type: macos
+            runs-on: macos-26
+            xcode: "/Applications/Xcode_26.0.app"
+          
+          # iOS Build Matrix
+          - type: ios
+            runs-on: macos-15
+            xcode: "/Applications/Xcode_26.0.app"
+            deviceName: "iPhone Air"
+            osVersion: "26.0.1"
+            download-platform: true
+
+          - type: ios
+            runs-on: macos-15
+            xcode: "/Applications/Xcode_16.4.app"
+            deviceName: "iPhone 16"
+            osVersion: "18.5"
+  
+          # watchOS Build Matrix
+          - type: watchos
+            runs-on: macos-15
+            xcode: "/Applications/Xcode_26.0.app"
+            deviceName: "Apple Watch Series 11 (46mm)"
+            osVersion: "26.0"
+            download-platform: true
+
+          - type: watchos
+            runs-on: macos-15
+            xcode: "/Applications/Xcode_16.4.app"
+            deviceName: "Apple Watch Series 10 (42mm)"
+            osVersion: "11.5"
+
+          # visionOS Build Matrix
+          - type: visionos
+            runs-on: macos-15
+            xcode: "/Applications/Xcode_26.0.app"
+            deviceName: "Apple Vision Pro"
+            osVersion: "26.0"            
+            download-platform: true
+
+          - type: visionos
+            runs-on: macos-26
+            xcode: "/Applications/Xcode_26.0.app"
+            deviceName: "Apple Vision Pro"
+            osVersion: "26.0"            
+            download-platform: true
+  
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and Test
+        uses: brightdigit/swift-build@v1.5.0-beta.2
+        with:
+          working-directory: ./Packages/HarvestBinKit
+          scheme: HarvestBinKit-Package
+          type: ${{ matrix.type }}
+          xcode: ${{ matrix.xcode }}
+          deviceName: ${{ matrix.deviceName }}
+          osVersion: ${{ matrix.osVersion }}
+          download-platform: ${{ matrix.download-platform || false }}
+          skip-package-resolved: true
+          
+      # Common Coverage Steps
+      - name: Process Coverage
+        uses: sersoft-gmbh/swift-coverage-action@v4
+        with:
+          search-paths: |
+            ./Packages/HarvestBinKit/.build
+            $HOME/Library/Developer/Xcode/DerivedData
+            ${{ runner.temp }}/DerivedData
+          fail-on-empty-output: true
+
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: ${{ matrix.type && format('{0}{1}', matrix.type, matrix.osVersion) || 'spm' }}
+
+  lint:
+    name: Linting
+    if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
+    runs-on: ubuntu-latest
+    needs: [build-ubuntu, build-macos]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v2
+      - name: Lint
+        run: ./Scripts/lint.sh

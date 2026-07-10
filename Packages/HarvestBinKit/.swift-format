@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "lineLength": 108,
+  "indentation": {
+    "spaces": 2
+  },
+  "respectsExistingLineBreaks": true,
+  "lineBreakBeforeControlFlowKeywords": false,
+  "lineBreakBeforeEachArgument": false,
+  "fileScopedDeclarationPrivacy": {
+    "accessLevel": "private"
+  }
+}
