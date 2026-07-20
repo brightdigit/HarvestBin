@@ -49,6 +49,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Update BushelKit dependency to use subrepo branch
+      run: |
+        sed -i '' 's|.package(path: "../../../BushelKit")|.package(url: "https://github.com/brightdigit/BushelKit.git", branch: "subrepo")|g' Packages/HarvestBinKit/Package.swift
+
     - name: Setup Xcode
       run: sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
 

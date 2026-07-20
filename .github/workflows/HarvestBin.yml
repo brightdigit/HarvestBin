@@ -19,6 +19,9 @@ jobs:
     container: ${{ matrix.image }}
     steps:
       - uses: actions/checkout@v4
+      - name: Update BushelKit dependency to use subrepo branch
+        run: |
+          sed -i 's|.package(path: "../../../BushelKit")|.package(url: "https://github.com/brightdigit/BushelKit.git", branch: "subrepo")|g' Packages/HarvestBinKit/Package.swift
       - uses: brightdigit/swift-build@v1.5.0-beta.2
         with:
           working-directory: ./Packages/HarvestBinKit
@@ -139,11 +142,14 @@ jobs:
   
     steps:
       - uses: actions/checkout@v4
+      - name: Update BushelKit dependency to use subrepo branch
+        run: |
+          sed -i '' 's|.package(path: "../../../BushelKit")|.package(url: "https://github.com/brightdigit/BushelKit.git", branch: "subrepo")|g' Packages/HarvestBinKit/Package.swift
       - name: Build and Test
         uses: brightdigit/swift-build@v1.5.0-beta.2
         with:
           working-directory: ./Packages/HarvestBinKit
-          scheme: HarvestBinKit-Package
+          scheme: HarvestBinKit
           type: ${{ matrix.type }}
           xcode: ${{ matrix.xcode }}
           deviceName: ${{ matrix.deviceName }}
@@ -175,5 +181,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: jdx/mise-action@v2
+      - name: Update BushelKit dependency to use subrepo branch
+        run: |
+          sed -i 's|.package(path: "../../../BushelKit")|.package(url: "https://github.com/brightdigit/BushelKit.git", branch: "subrepo")|g' Packages/HarvestBinKit/Package.swift
       - name: Lint
         run: ./Scripts/lint.sh

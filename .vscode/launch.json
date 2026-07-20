@@ -19,26 +19,6 @@
             "preLaunchTask": "swift: Build Release harvestbin",
             "target": "harvestbin",
             "configuration": "release"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:cleanup-bushelkit-alpha4}/Packages/HarvestBinKit",
-            "name": "Debug harvestbin (Packages/HarvestBinKit)",
-            "target": "harvestbin",
-            "configuration": "debug",
-            "preLaunchTask": "swift: Build Debug harvestbin (Packages/HarvestBinKit)"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:cleanup-bushelkit-alpha4}/Packages/HarvestBinKit",
-            "name": "Release harvestbin (Packages/HarvestBinKit)",
-            "target": "harvestbin",
-            "configuration": "release",
-            "preLaunchTask": "swift: Build Release harvestbin (Packages/HarvestBinKit)"
         }
     ]
 }

@@ -8,6 +8,7 @@
 import BushelHarvestCore
 import Foundation
 
+
 /// Main HarvestBin service for guest-side VM functionality
 ///
 /// Coordinates all HarvestBin services including command execution, remote access, and host communication.
@@ -29,18 +30,18 @@ public actor HarvestBinService {
     self.discoveryService = NetworkDiscoveryService(logger: logger)
 
     #if os(macOS)
-      // Use VirtioSocket for direct host communication on macOS
-      let virtioClient = VirtioSocketClient()
-      self.hostConnectionService = VirtioSocketHostConnectionService(
-        virtioClient: virtioClient,
-        logger: logger
-      )
+    // Use VirtioSocket for direct host communication on macOS
+    let virtioClient = VirtioSocketClient()
+    self.hostConnectionService = VirtioSocketHostConnectionService(
+      virtioClient: virtioClient,
+      logger: logger
+    )
     #else
-      // Use DefaultHostConnectionService for non-macOS platforms
-      self.hostConnectionService = DefaultHostConnectionService(
-        discoveryService: discoveryService,
-        logger: logger
-      )
+    // Use DefaultHostConnectionService for non-macOS platforms
+    self.hostConnectionService = DefaultHostConnectionService(
+      discoveryService: discoveryService,
+      logger: logger
+    )
     #endif
 
     self.logger = logger
